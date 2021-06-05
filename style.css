@@ -326,9 +326,16 @@ html{
     background-color: rgba(255, 255, 255, 0.479);
     backdrop-filter: blur(10px);
 }
-.form{
+#form{
     display: flex;
     flex-direction: column;
+    padding: 1rem 2rem;
+}
+#form h1{
+    padding: 1rem 2rem;
+}
+#form input{
+    border-radius: 20px;
 }
 .about{
     margin-top: 0vh;
