@@ -253,7 +253,7 @@ html{
 /*Section 4 */
 
 #section4{
-    height: 100vh;
+   
     width: 100vw;
 }
 #section4 #content2{
@@ -296,32 +296,22 @@ html{
 
 #fin_sec{
     height: 100vh;
-    width: 100vw;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;   
+    width: 100vw; 
 }
-.footer{
-    justify-content: center;
-    align-items: center;
-}
-.footer .fin_img{
+.fin_img{
     background-image: url(fin_sec.jpg);
     background-position: center center;
     background-size: cover;
-    height: 60vh;
     width: 100vw;
-    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .form_data{
     display: flex;
     justify-content: center;
     height: 80%;
-    width: calc(25vh + 25vw);
-    margin: auto;
-    margin-top: 2rem;
+    margin: 2rem auto;
     border-radius: 2rem;
     background-color: rgba(255, 255, 255, 0.479);
     backdrop-filter: blur(10px);
@@ -334,8 +324,19 @@ html{
 #form h1{
     padding: 1rem 2rem;
 }
+.form-group{
+    margin: auto;
+}
+#form label{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #004eff;
+}
 #form input{
     border-radius: 20px;
+    width: fit-content;
+    margin: auto;
 }
 .about{
     margin-top: 0vh;
@@ -345,8 +346,7 @@ html{
     border: 1px solid black;
     color: #fff;
     flex-grow: 20;
-    background-color: #595667;
-}
+}   
 .boxfin{
     margin-left: 20vw;
 }
