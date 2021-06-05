@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    outline: none;
 }
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -191,6 +192,7 @@ html{
         width: fit-content;
         box-shadow: none;
         border: none;
+        overflow: overlay;
         /* max-width: 80vw; */
     }
     .section2 h1 {
@@ -303,9 +305,11 @@ html{
     background-position: center center;
     background-size: cover;
     width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .form_data{
     display: flex;
@@ -340,19 +344,70 @@ html{
 }
 .about{
     margin-top: 0vh;
-    height: 40vh;
+    height: 70vh;
     width: 100vw;
-    display: flex;
     border: 1px solid black;
     color: #fff;
     flex-grow: 20;
-}   
-.boxfin{
-    margin-left: 20vw;
+    backdrop-filter: brightness(.1);
+}
+.about-box{
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.email .form2{
+    width: 400px;
+    padding: 20px 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.342);
+}
+/* .form-all{
+    padding: 1rem 2rem;
+} */
+.form2 h4{
+    margin-bottom: 30px;
+    width: 300px;
+    font-size: 20px;
+    margin: auto;
+    color: black;
+}
+.email .form2 .form-group{
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    margin: 30px auto;
+    position: relative;
+}
+.form2 .form-group input{
+    width: fit-content;
+    border: none;
+    padding: 7px;
+    margin-top: 5px;
+    outline: none;
+    border-bottom: 1px solid #c9c9c98a;
+}
+.form2 .form-group label{
+    color: rgb(165, 165, 165);
+    position: absolute;
+    top: 10px;
+    transition: .5s ease-in-out;
 }
 
-
-
+.form2 .form-group input:focus ~ label{
+    color: #004eff;
+    top: -10px;
+}
+.copyright{
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(48, 34, 26, 0.863);
+}
 
 
 /*bootstarp css mod >>*/
