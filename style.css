@@ -26,7 +26,7 @@ html{
 /*Section 1*/
 
 .section1{
-    background-image: url(bg1.1.jpg);
+    background-image: url(./Images/bg1.1.jpg);
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -301,7 +301,7 @@ html{
     width: 100vw; 
 }
 .fin_img{
-    background-image: url(fin_sec.jpg);
+    background-image: url(./Images/fin_sec.jpg);
     background-position: center center;
     background-size: cover;
     width: 100vw;
