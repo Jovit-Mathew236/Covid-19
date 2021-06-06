@@ -387,7 +387,6 @@ html{
     position: relative;
 }
 .form2 .form-group input{
-    width: fit-content;
     border: none;
     padding: 7px;
     margin-top: 5px;
@@ -400,10 +399,16 @@ html{
     top: 10px;
     transition: .5s ease-in-out;
 }
-
-.form2 .form-group input:focus ~ label{
+.form2 .form-group label:hover{
     color: #ff00ff;
     top: -10px;
+    font-size: 12px;
+}
+.form2 .form-group input:focus ~ label,
+.form2 .form-group input:valid ~ label{
+    color: #ff00ff;
+    top: -10px;
+    font-size: 12px;
 }
 .form-submit{
     width: inherit;
