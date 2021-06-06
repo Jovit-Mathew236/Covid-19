@@ -9,64 +9,99 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="index.js"></script>
   <title>Hello, world!</title>
 </head>
 
 <body>
-  <div class="wholeBody">
-    <div class="section1" id="section1">
-      <div class="navbar">
-        <div class="logo">
-          <img src="./Images/logo1.png" alt="">
-        </div>
-        <div class="menu">
-
-          <ul>
-            <a href="#section2">COVID-19</a>
-            <a href="#section3">MYTH & FACT</a>
-            <a href="#section4">Q & A</a>
-            <a href="#fin_sec">ABOUT</a>
-          </ul>
-          <i onclick="showMenu()" class="fas fa-bars"></i>
-        </div>
+  <!-- Section one Start -->
+  <div class="section1" id="section1">
+    <div class="navbar">
+      <div class="logo">
+        <img src="./Images/logo1.png" alt="">
       </div>
-      <div class="heading">
-        <div class="tag">
-          <p>SJCET CHOONTACHEERY</p>
-        </div>
-        <div class="head">
-          <h1>Why You should take Covid vaccine?</h1>
-        </div>
-        <a href="#section2"><button class="btn">TAKE A TOUR</button></a>
+      <div class="menu">
+
+        <ul>
+          <a href="#section2">COVID-19</a>
+          <a href="#section3">MYTH & FACT</a>
+          <a href="#section4">Q & A</a>
+          <a href="#fin_sec">ABOUT</a>
+        </ul>
+        <i onclick="showMenu()" class="fas fa-bars"></i>
       </div>
     </div>
-    <div class="section2" id="section2">
-      <div><img src="./Images/sec2.jpg" alt=""></div>
-      <div class="sec2_content">
-        <h1>COVID-19 vaccination is a safer way to help build protection</h1>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          imperdiet, nulla et erisque enim ligula
-          venenatis dolor. Maecenas nisl est, ultrices nec congue ege
-          auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
-          Nunc sagittis dictum nisi, sed ullamcorper
-          dictum interdum, nisi lorem egestas vitae scel
-          <span id="dots">...</span><span id="more"> ipsum dignissim ac.
-            In at libero sed nunc venenatis imperdiet sed ornare turpis. D
-            onec vitae dui eget tellus gravida venenatis. Integer fringilla
-            gue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span>
-        </p>
-        <button onclick="myFunction()" id="myBtn">Read more</button>
+    <div class="heading">
+      <div class="tag">
+        <p>SJCET CHOONTACHEERY</p>
       </div>
+      <div class="head">
+        <h1>Why You should take Covid vaccine?</h1>
+      </div>
+      <!-- Section one End -->
+
+      <!-- Section Two Start -->
+      <a href="#section2"><button class="btn">TAKE A TOUR</button></a>
     </div>
+  </div>
+  <div class="section2" id="section2">
+    <div><img src="./Images/sec2.jpg" alt=""></div>
+    <div class="sec2_content">
+      <h1>COVID-19 vaccination is a safer way to help build protection</h1>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        imperdiet, nulla et erisque enim ligula
+        venenatis dolor. Maecenas nisl est, ultrices nec congue ege
+        auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+        Nunc sagittis dictum nisi, sed ullamcorper
+        dictum interdum, nisi lorem egestas vitae scel
+        <span id="dots">...</span><span id="more"> ipsum dignissim ac.
+          In at libero sed nunc venenatis imperdiet sed ornare turpis. D
+          onec vitae dui eget tellus gravida venenatis. Integer fringilla
+          gue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span>
+      </p>
+      <button onclick="myFunction()" id="myBtn">Read more</button>
+    </div>
+  </div>
+  <!-- Section Two End -->
+ <table class="table">
+   <thead>
+     <tr>
+       <th>Total Death</th>
+       <th>Recured</th>
+       <th>current patients</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr id="data">
+       
+     </tr>
+   </tbody>
+ </table>
 
+  <!-- Section Three.a Start -->
+  <div id="section3">
+    <div class="sec3_content">
+      <h1>COVID-19 Vaccines: Myth Versus Fact</h1>
+      <div class="cards">
+        <div class="row1 row-cols-1 row-cols-md-3 g-4">
 
-    <div id="section3">
-      <div class="sec3_content">
-        <h1>COVID-19 Vaccines: Myth Versus Fact</h1>
-        <div class="cards">
-          <div class="row1 row-cols-1 row-cols-md-3 g-4">
+          <div class="card1">
+            <img src="./Images/card.jpg" class="card-img-top" alt="card.jpg">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
+                necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
+                error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
+                odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
+                necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
+                consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
+                ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
+                asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
+            </div>
+          </div>
 
+          <div class="col">
             <div class="card1">
               <img src="./Images/card.jpg" class="card-img-top" alt="card.jpg">
               <div class="card-body">
@@ -81,52 +116,52 @@
                   asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
               </div>
             </div>
-
-            <div class="col">
-              <div class="card1">
-                <img src="./Images/card.jpg" class="card-img-top" alt="card.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
-                    necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
-                    error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
-                    odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
-                    necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
-                    consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
-                    ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
-                    asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card1">
-                <img src="./Images/card.jpg" class="card-img-top" alt=".jpg">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
-                    necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
-                    error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
-                    odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
-                    necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
-                    consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
-                    ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
-                    asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
-                </div>
+          </div>
+          <div class="col">
+            <div class="card1">
+              <img src="./Images/card.jpg" class="card-img-top" alt=".jpg">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
+                  necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
+                  error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
+                  odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
+                  necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
+                  consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
+                  ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
+                  asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <!-- Section Three.a End -->
 
+  <!-- Section Three.b start -->
+  <div id="section3">
+    <div class="sec3_content">
+      <h1>COVID-19 Vaccines: Myth Versus Fact</h1>
+      <div class="cards">
+        <div class="row1 row-cols-1 row-cols-md-3 g-4">
 
+          <div class="card1">
+            <img src="./Images/card.jpg" class="card-img-top" alt="./Images/card.jpg">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
+                necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
+                error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
+                odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
+                necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
+                consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
+                ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
+                asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
+            </div>
+          </div>
 
-    <div id="section3">
-      <div class="sec3_content">
-        <h1>COVID-19 Vaccines: Myth Versus Fact</h1>
-        <div class="cards">
-          <div class="row1 row-cols-1 row-cols-md-3 g-4">
-
+          <div class="col">
             <div class="card1">
               <img src="./Images/card.jpg" class="card-img-top" alt="./Images/card.jpg">
               <div class="card-body">
@@ -141,303 +176,289 @@
                   asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
               </div>
             </div>
-
-            <div class="col">
-              <div class="card1">
-                <img src="./Images/card.jpg" class="card-img-top" alt="./Images/card.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
-                    necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
-                    error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
-                    odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
-                    necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
-                    consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
-                    ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
-                    asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card1">
-                <img src="./Images/card.jpg" class="card-img-top" alt="./Images/card.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
-                    necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
-                    error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
-                    odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
-                    necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
-                    consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
-                    ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
-                    asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
-                </div>
+          </div>
+          <div class="col">
+            <div class="card1">
+              <img src="./Images/card.jpg" class="card-img-top" alt="./Images/card.jpg">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti alias minus
+                  necessitatibus beatae id, facere magnam a, distinctio voluptatum quos ab placeat mollitia, itaque
+                  error sunt debitis eos deserunt aliquid recusandae corrupti? Hic, doloremque voluptates aperiam quos
+                  odio ipsam esse nulla culpa incidunt. Consequatur ab, quod, rem magni quaerat id modi officia, ipsum
+                  necessitatibus tempore repellendus error nisi. Dolorem, possimus? Autem ipsum consequuntur
+                  consectetur esse sint ut ex magni assumenda quis atque? Aperiam dolorum tempora exercitationem earum
+                  ducimus veniam nemo eveniet. Temporibus quod sequi deserunt vel, reprehenderit eligendi mollitia
+                  asperiores sed facilis tempore et, quis nobis ipsum est excepturi assumenda?</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div id="section4">
-      <h1>Common Questions And Answers</h1>
-
-      <button id="slideLeft" type="button">
-        < </button>
-          <button id="slideRight" type="button"> > </button>
-
-          <div id="content2">
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-            <div class="Question_card">
-              <div class="card" style="width: 18rem;">
-                <img src="./Images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
-                    rum officia inventore expedita dignissimos, aliquid eveniet fug
-                    it quas, odio, impedit magni. Nam, saepe libero accusantium mo
-                    lestias esse possimus nesciunt veritatis fugiat nisi sint dol
-                    or placeat minima quaerat. Illo ut ipsa vero.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <script>
-            const buttonRight = document.getElementById('slideRight');
-            const buttonLeft = document.getElementById('slideLeft');
-
-            buttonRight.onclick = function () {
-              document.getElementById('content2').scrollLeft += 1000;
-            };
-            buttonLeft.onclick = function () {
-              document.getElementById('content2').scrollLeft -= 1000;
-            };
-          </script>
-    </div>
-
-    <!--Final Section-->
-
-    <div id="fin_sec">
-      <footer>
-        <div class="fin_img">
-          <div class="form_data">
-            <form id="form" action="">
-              <h1>Covid vaccine Bookikng</h1>
-              <div class="form-group">
-                <label for="country">Country:</label>
-                <input list="countries" name="country">
-                <datalist id="countries">
-                  <option value="Internet Explorer">
-                  <option value="Firefox">
-                  <option value="Chrome">
-                  <option value="Opera">
-                  <option value="Safari">
-                </datalist>
-                <label for="state">State:</label>
-                <input list="state" name="State">
-                <datalist id="state">
-                  <option value="Internet Explorer">
-                  <option value="Firefox">
-                  <option value="Chrome">
-                  <option value="Opera">
-                  <option value="Safari">
-                </datalist>
-                <label for="district">District:</label>
-                <input list="district" name="District">
-                <datalist id="district">
-                  <option value="Internet Explorer">
-                  <option value="Firefox">
-                  <option value="Chrome">
-                  <option value="Opera">
-                  <option value="Safari">
-                </datalist>
-                <label for="place">Place:</label>
-                <input list="place" name="Place">
-                <datalist id="place">
-                  <option value="Internet Explorer">
-                  <option value="Firefox">
-                  <option value="Chrome">
-                  <option value="Opera">
-                  <option value="Safari">
-                </datalist>
-              </div>
-          </div>
-        </div>
-        <div class="about">
-          <div class="about-box">
-            <div class="about-me">
-              <h1>About Me</h1>
-              <li>I am Jovit Mathew</li>
-              <li>stydied in 12th</li>
-              <li>Main Hobby is coding</li>
-            </div>
-            <div class="Content">
-              <h1>Content Me</h1>
-              <li href="tel:9400937046">9400937046</li>
-              <li href="tel:9446708500">9446708500</li>
-              <li href="tel:9447231112">9447231112</li>
-              <li href="tel:9400908371">9400908371</li>
-            </div>
-            <div class="email">
-              
-                <div class="form2">
-                <h4>Email Me Here</h4>
-                <form action="">
-                  <div class="form-all">
-                    <div class="form-group">
-                      <input type="text" required>
-                      <label for="name">Name</label>
-                    </div>
-                    <div class="form-group">
-                      <input type="number" required>
-                      <label for="phno">Phone No</label>
-                    </div>
-                    <div class="form-group">
-                      <input type="text" required>
-                      <label for="email">Email</label>
-                    </div>
-                    <div class="form-group">
-                      <input type="text" required>
-                      <label for="msg">Message</label>
-                    </div>
-                    <div class="form-group">
-                      <input class="form-submit" type="submit" value="Submit">
-                    </div>
-                  </div>
-                </form>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <div class="copyright">
-          <p>@Copyright Jovit</p>
-          <div class="social-media">
-            <img src="https://img.icons8.com/color/48/000000/instagram-new--v2.png"/>
-            <img src="https://img.icons8.com/color/50/000000/facebook-circled--v4.png"/>
-            <img src="https://img.icons8.com/color/48/000000/whatsapp--v5.png"/>
-          </div>
-        </div>
-      </footer>
-    </div>
-
   </div>
+  <!-- Section Three.b End -->
+
+  <!-- Section Four Start -->
+  <div id="section4">
+    <h1>Common Questions And Answers</h1>
+
+    <button id="slideLeft" type="button">
+      < </button>
+        <button id="slideRight" type="button"> > </button>
+
+        <div id="content2">
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+          <div class="Question_card">
+            <div class="card" style="width: 18rem;">
+              <img src="./Images/card.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Veniam eaque obcaecati pariatur sapiente ha
+                  rum officia inventore expedita dignissimos, aliquid eveniet fug
+                  it quas, odio, impedit magni. Nam, saepe libero accusantium mo
+                  lestias esse possimus nesciunt veritatis fugiat nisi sint dol
+                  or placeat minima quaerat. Illo ut ipsa vero.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          const buttonRight = document.getElementById('slideRight');
+          const buttonLeft = document.getElementById('slideLeft');
+
+          buttonRight.onclick = function () {
+            document.getElementById('content2').scrollLeft += 1000;
+          };
+          buttonLeft.onclick = function () {
+            document.getElementById('content2').scrollLeft -= 1000;
+          };
+        </script>
+  </div>
+  <!-- Section Four End -->
+
+  <!--Final Section-->
+  <div id="fin_sec">
+    <footer>
+      <div class="fin_img">
+        <div class="form_data">
+          <form id="form" action="">
+            <h1>Covid vaccine Bookikng</h1>
+            <div class="form-group">
+              <label for="country">Country:</label>
+              <input list="countries" name="country">
+              <datalist id="countries">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+              </datalist>
+              <label for="state">State:</label>
+              <input list="state" name="State">
+              <datalist id="state">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+              </datalist>
+              <label for="district">District:</label>
+              <input list="district" name="District">
+              <datalist id="district">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+              </datalist>
+              <label for="place">Place:</label>
+              <input list="place" name="Place">
+              <datalist id="place">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+              </datalist>
+            </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="about-box">
+          <div class="about-me">
+            <h1>About Me</h1>
+            <li>I am Jovit Mathew</li>
+            <li>stydied in 12th</li>
+            <li>Main Hobby is coding</li>
+          </div>
+          <div class="Content">
+            <h1>Content Me</h1>
+            <li href="tel:9400937046">9400937046</li>
+            <li href="tel:9446708500">9446708500</li>
+            <li href="tel:9447231112">9447231112</li>
+            <li href="tel:9400908371">9400908371</li>
+          </div>
+          <div class="email">
+
+            <div class="form2">
+              <h4>Email Me Here</h4>
+              <form action="">
+                <div class="form-all">
+                  <div class="form-group">
+                    <input type="text" required>
+                    <label for="name">Name</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="number" required>
+                    <label for="phno">Phone No</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" required>
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" required>
+                    <label for="msg">Message</label>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-submit" type="submit" value="Submit">
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>@Copyright Jovit</p>
+        <div class="social-media">
+          <img src="https://img.icons8.com/color/48/000000/instagram-new--v2.png" />
+          <img src="https://img.icons8.com/color/50/000000/facebook-circled--v4.png" />
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v5.png" />
+        </div>
+      </div>
+    </footer>
+  </div>
+<!-- Final Section End -->
+
 
 
 
