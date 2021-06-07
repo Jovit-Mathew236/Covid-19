@@ -5,10 +5,11 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="index.js"></script>
   <title>Hello, world!</title>
@@ -64,20 +65,18 @@
     </div>
   </div>
   <!-- Section Two End -->
- <table class="table">
-   <thead>
-     <tr>
-       <th>Total Death</th>
-       <th>Recured</th>
-       <th>current patients</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr id="data">
-       
-     </tr>
-   </tbody>
- </table>
+
+  <div class="covid-status">
+    <h1>Covid-19 Status</h1>
+    <div class="data-box">
+      <h2>Total Death</h2>
+      <p id="tD"></p>
+      <h2>Total Recoverd</h2>
+      <p id="tR"></p>
+      <h2>Total Confirmed</h2>
+      <p id="tC"></p>
+    </div>
+  </div>
 
   <!-- Section Three.a Start -->
   <div id="section3">
@@ -457,7 +456,7 @@
       </div>
     </footer>
   </div>
-<!-- Final Section End -->
+  <!-- Final Section End -->
 
 
 

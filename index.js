@@ -31,17 +31,23 @@ $(document).ready(function(){
 
   function init(){
     var url = "https://api.covid19api.com/summary"
-    var data = ''
     $.get(url,function(data){
       console.log(data);
 
-      data =`
-      <td>${data.Global.TotalDeaths}</td>
-      <td>${data.Global.TotalRecovered}</td>
-      <td>${data.Global.TotalConfirmed}</td>
-      `
+      tD = '"'+data.Global.TotalDeaths+'"'
+      tR = '"'+data.Global.TotalRecovered+'"'
+      tC = '"'+data.Global.TotalConfirmed+'"'
+      // data =`
+      // <p>${'"'+data.Global.TotalDeaths+'"'}</p>
+      // <p>${'"'+data.Global.TotalRecovered+'"'}</p>
+      // <p>${'"'+data.Global.TotalConfirmed+'"'}</p>
+      // `
 
-      $("#data").html(data)
+      $("#tD").html(tD)
+      $("#tR").html(tR)
+      $("#tC").html(tC)
+
+      // $("#data").html(data)
     })
   }
 })
