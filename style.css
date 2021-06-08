@@ -233,11 +233,10 @@ html {
 .covid-status {
   width: 100vw;
   height: auto;
-  /* background-color: #2e2e2e8a; */
   background-image: linear-gradient(45deg, #ff6c00, #ef00ff8f);
   border-radius: 30px;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 4rem;
   color: white;
 }
 .covid-status h1 {
@@ -276,60 +275,6 @@ html {
 .data-box p:nth-child(6) {
     background-image: linear-gradient(222deg, #fbff04 -20%, #1100ffda 123%);
 }
-/* .load{
-    height: 100vh;
-    width: 100vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #000000d9;
-}
-.amim1{
-    position: relative;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    
-    align-items: center;
-    justify-content: center;
-}
-.anim span{
-    position: absolute;
-    border-radius: 50%;
-    animation: a1 2.5s linear infinite;
-}
-.anim span:nth-child(1){
-    animation-delay: 0s;
-}
-.anim span:nth-child(2){
-    animation-delay: .5s;
-}
-.anim span:nth-child(3){
-    animation-delay: 1s;
-}
-.anim span:nth-child(4){
-    animation-delay: 1.5s;
-}
-.anim span:nth-child(5){
-    animation-delay: 2s;
-}
-.anim span:nth-child(6){
-    animation-delay: 2.5s;
-}
-@keyframes a1 {
-    0%{
-        width: 0%;
-        height: 0%;
-        opacity: 0;
-        box-shadow: inset 0 0 50px rgba(17,171,17,.1);
-    }100%{
-        width: 100%;
-        height: 100%;
-        opacity: 1;
-        box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.8);
-    }
-} */
 
 /*Section 3*/
 
