@@ -14,15 +14,7 @@ const myFunction = () => {
   }
 };
 
-// var requestOptions = {
-//   method: 'GET',
-//   redirect: 'follow'
-// };
 
-// fetch("https://api.covid19api.com/summary", requestOptions)
-//   .then(res => res.json())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
 
 $(document).ready(function () {
   init();
@@ -30,7 +22,7 @@ $(document).ready(function () {
   function init() {
     var url = "https://api.covid19api.com/summary";
     $.get(url, function (data) {
-      //console.log(data.Countries);
+      //console.log(data);
 
       const selectElem = document.querySelector("select#select");
 
@@ -75,6 +67,120 @@ $(document).ready(function () {
       }
 
       // $("#data").html(data)
+    });
+  }
+});
+
+
+
+
+$(document).ready(function () {
+  init2();
+
+  function init2() {
+    var url = "https://cdn-api.co-vin.in/api/v2/admin/location/states";
+    $.get(url, function (data) {
+      //console.log(data);
+
+      const selectElem2 = document.querySelector("select#state");
+
+      for (eachCountry in data.states) {
+        const singleCountry = data.states[eachCountry];
+        // console.log(singleItem);
+        makeNewOptionBox2(singleCountry);
+
+        selectElem2.addEventListener("change", function (e) {
+          if (e.target.value == singleCountry.state_name) {
+            console.log(singleCountry.state_id);
+            //callData2(singleCountry.state_id);
+          }
+        });
+      }
+
+      function makeNewOptionBox2(data) {
+        const title2 = data.state_name;
+        if (typeof title2 != "undefined") {
+          const optionBox2 = document.createElement("option");
+          optionBox2.innerHTML = title2;
+          selectElem2.appendChild(optionBox2);
+        }
+      }
+
+      // // tD = '"' + data.Global.TotalDeaths + '"';
+      // // tR = '"' + data.Global.TotalRecovered + '"';
+      // // tC = '"' + data.Global.TotalConfirmed + '"';
+
+      // // data =`
+      // // <p>${'"'+data.Global.TotalDeaths+'"'}</p>
+      // // <p>${'"'+data.Global.TotalRecovered+'"'}</p>
+      // // <p>${'"'+data.Global.TotalConfirmed+'"'}</p>
+      // // `
+      // function callData2(cData2) {
+      //   tD = '"' + cData.TotalDeaths + '"';
+      //   tR = '"' + cData.TotalRecovered + '"';
+      //   tC = '"' + cData.TotalConfirmed + '"';
+      //   $("#tD").html(tD);
+      //   $("#tR").html(tR);
+      //   $("#tC").html(tC);
+      // }
+
+      // // $("#data").html(data)
+    });
+  }
+});
+
+
+$(document).ready(function () {
+  init2();
+
+  function init2() {
+    var url = "https://cdn-api.co-vin.in/api/v2/admin/location/districts/17";
+    $.get(url, function (data) {
+      console.log(data);
+
+      // const selectElem2 = document.querySelector("select#state");
+
+      // for (eachCountry in data.states) {
+      //   const singleCountry = data.states[eachCountry];
+      //   // console.log(singleItem);
+      //   makeNewOptionBox2(singleCountry);
+
+      //   selectElem2.addEventListener("change", function (e) {
+      //     if (e.target.value == singleCountry.state_name) {
+      //       console.log(singleCountry.state_id);
+      //       //callData2(singleCountry);
+      //     }
+      //   });
+      // }
+
+      // function makeNewOptionBox2(data) {
+      //   const title2 = data.state_name;
+      //   if (typeof title2 != "undefined") {
+      //     const optionBox2 = document.createElement("option");
+      //     optionBox2.innerHTML = title2;
+      //     selectElem2.appendChild(optionBox2);
+      //   }
+      // }
+
+      // // tD = '"' + data.Global.TotalDeaths + '"';
+      // // tR = '"' + data.Global.TotalRecovered + '"';
+      // // tC = '"' + data.Global.TotalConfirmed + '"';
+
+      // // data =`
+      // // <p>${'"'+data.Global.TotalDeaths+'"'}</p>
+      // // <p>${'"'+data.Global.TotalRecovered+'"'}</p>
+      // // <p>${'"'+data.Global.TotalConfirmed+'"'}</p>
+      // // `
+      // function callData2(cData2) {
+      //   tD = '"' + cData.TotalDeaths + '"';
+      //   tR = '"' + cData.TotalRecovered + '"';
+      //   tC = '"' + cData.TotalConfirmed + '"';
+      //   $("#tD").html(tD);
+      //   $("#tR").html(tR);
+      //   $("#tC").html(tC);
+      // }
+
+      // // $("#data").html(data)
     });
   }
 });
