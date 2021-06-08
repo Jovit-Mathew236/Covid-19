@@ -68,14 +68,24 @@
 
   <!-- Covid-19 Status Start-->
   <div class="covid-status">
+
     <h1>Covid-19 Status</h1>
+    <select name="country" id="select">
+      <option value="0">Select Country</option>
+    </select>
     <div class="data-box">
-      <h2>Total Death</h2>
-      <p id="tD"></p>
-      <h2>Total Recoverd</h2>
-      <p id="tR"></p>
-      <h2>Total Confirmed</h2>
-      <p id="tC"></p>
+      <div>
+        <h2>Total Death</h2>
+        <p id="tD">0</p>
+      </div>
+      <div>
+        <h2>Total Recoverd</h2>
+        <p id="tR">0</p>
+      </div>
+      <div>
+        <h2>Total Confirmed</h2>
+        <p id="tC">0</p>
+      </div>
     </div>
   </div>
   <!-- covid-19 status End -->
@@ -363,14 +373,15 @@
             <h1>Covid vaccine Bookikng</h1>
             <div class="form-group">
               <label for="country">Country:</label>
-              <input list="countries" name="country">
-              <datalist id="countries">
-                <option value="Internet Explorer">
-                <option value="Firefox">
-                <option value="Chrome">
-                <option value="Opera">
-                <option value="Safari">
-              </datalist>
+              <select name="" id="country">
+                <option value="Internet Explorer">Internet Explorer</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Chrome">Chrome</option>
+                <option value="Opera">Opera</option>
+                <option value="Safari">Safari</option>
+              </select>
+
+
               <label for="state">State:</label>
               <input list="state" name="State">
               <datalist id="state">
@@ -406,15 +417,23 @@
           <div class="about-me">
             <h1>About Me</h1>
             <li>I am Jovit Mathew</li>
-            <li>stydied in 12th</li>
+            <li>studied in Plus Two</li>
             <li>Main Hobby is coding</li>
           </div>
-          <div class="Content">
-            <h1>Content Me</h1>
-            <li href="tel:9400937046">9400937046</li>
-            <li href="tel:9446708500">9446708500</li>
-            <li href="tel:9447231112">9447231112</li>
-            <li href="tel:9400908371">9400908371</li>
+          <div class="contact">
+            <h1>Contact Me</h1>
+            <a href="tel:9400937046">
+              <li>9400937046</li>
+            </a>
+            <a href="tel:9446708500">
+              <li>9446708500</li>
+            </a>
+            <a href="tel:9447231112">
+              <li>9447231112</li>
+            </a>
+            <a href="tel:9400908371">
+              <li>9400908371</li>
+            </a>
           </div>
           <div class="email">
 

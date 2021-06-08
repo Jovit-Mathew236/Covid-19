@@ -24,30 +24,57 @@ const myFunction = () => {
 //   .then(result => console.log(result))
 //   .catch(error => console.log('error', error));
 
+$(document).ready(function () {
+  init();
 
+  function init() {
+    var url = "https://api.covid19api.com/summary";
+    $.get(url, function (data) {
+      //console.log(data.Countries);
 
-$(document).ready(function(){
-  init()
+      const selectElem = document.querySelector("select#select");
 
-  function init(){
-    var url = "https://api.covid19api.com/summary"
-    $.get(url,function(data){
-      console.log(data);
+      for (eachItem in data.Countries) {
+        const singleItem = data.Countries[eachItem];
+        // console.log(singleItem);
+        makeNewOptionBox(singleItem);
 
-      tD = '"'+data.Global.TotalDeaths+'"'
-      tR = '"'+data.Global.TotalRecovered+'"'
-      tC = '"'+data.Global.TotalConfirmed+'"'
+        selectElem.addEventListener("change", function (e) {
+          if (e.target.value == singleItem.Country) {
+            //console.log(singleItem);
+            callData(singleItem);
+          }
+        });
+      }
+
+      function makeNewOptionBox(data) {
+        const title = data.Country;
+        if (typeof title != "undefined") {
+          const optionBox = document.createElement("option");
+          optionBox.innerHTML = title;
+          selectElem.appendChild(optionBox);
+        }
+      }
+
+      // tD = '"' + data.Global.TotalDeaths + '"';
+      // tR = '"' + data.Global.TotalRecovered + '"';
+      // tC = '"' + data.Global.TotalConfirmed + '"';
+
       // data =`
       // <p>${'"'+data.Global.TotalDeaths+'"'}</p>
       // <p>${'"'+data.Global.TotalRecovered+'"'}</p>
       // <p>${'"'+data.Global.TotalConfirmed+'"'}</p>
       // `
-
-      $("#tD").html(tD)
-      $("#tR").html(tR)
-      $("#tC").html(tC)
+      function callData(cData) {
+        tD = '"' + cData.TotalDeaths + '"';
+        tR = '"' + cData.TotalRecovered + '"';
+        tC = '"' + cData.TotalConfirmed + '"';
+        $("#tD").html(tD);
+        $("#tR").html(tR);
+        $("#tC").html(tC);
+      }
 
       // $("#data").html(data)
-    })
+    });
   }
-})
+});
