@@ -239,7 +239,7 @@ html {
   padding: 4rem;
   color: white;
 }
-.covid-status #select{
+.covid-status #select {
   background-color: white;
   color: blue;
   border: 1px solid black;
@@ -250,8 +250,8 @@ html {
   text-align: center;
   font-weight: 900;
 }
-.covid-status h2{
-    font-weight: 300;
+.covid-status h2 {
+  font-weight: 300;
 }
 .data-box {
   display: flex;
@@ -277,10 +277,10 @@ html {
   background-image: linear-gradient(222deg, #ff0404 -20%, #1100ffda 123%);
 }
 .data-box p:nth-child(4) {
-    background-image: linear-gradient(222deg, #36ff04 -20%, #1100ffda 123%);
+  background-image: linear-gradient(222deg, #36ff04 -20%, #1100ffda 123%);
 }
 .data-box p:nth-child(6) {
-    background-image: linear-gradient(222deg, #fbff04 -20%, #1100ffda 123%);
+  background-image: linear-gradient(222deg, #fbff04 -20%, #1100ffda 123%);
 }
 
 /*Section 3*/
@@ -365,7 +365,7 @@ html {
   background-position: center center;
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -374,19 +374,22 @@ html {
 .form_data {
   display: flex;
   justify-content: center;
-  height: 80%;
+  height: 50%;
   margin: 2rem auto;
   border-radius: 2rem;
-  background-color: rgba(255, 255, 255, 0.479);
-  backdrop-filter: blur(10px);
+  background-color: rgba(195, 195, 195, 0.479);
+  backdrop-filter: blur(5px);
 }
 #form {
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
+  padding: 2rem 2rem;
 }
 #form h1 {
   padding: 1rem 2rem;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
 }
 .form-group {
   margin: auto;
@@ -397,10 +400,12 @@ html {
   font-size: 1.2rem;
   color: #004eff;
 }
-#form input {
+#form select {
   border-radius: 20px;
   width: fit-content;
   margin: auto;
+  min-width: 100%;
+  cursor: pointer;
 }
 .about {
   margin-top: 0vh;
@@ -417,7 +422,7 @@ html {
   justify-content: space-evenly;
   align-items: center;
 }
-.contact a{
+.contact a {
   color: white;
   text-decoration: none;
 }

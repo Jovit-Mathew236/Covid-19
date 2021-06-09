@@ -14,8 +14,6 @@ const myFunction = () => {
   }
 };
 
-
-
 $(document).ready(function () {
   init();
 
@@ -71,9 +69,6 @@ $(document).ready(function () {
   }
 });
 
-
-
-
 $(document).ready(function () {
   init2();
 
@@ -82,105 +77,65 @@ $(document).ready(function () {
     $.get(url, function (data) {
       //console.log(data);
 
-      const selectElem2 = document.querySelector("select#state");
+      const selectState = document.querySelector("select#state");
 
-      for (eachCountry in data.states) {
-        const singleCountry = data.states[eachCountry];
-        // console.log(singleItem);
-        makeNewOptionBox2(singleCountry);
+      for (eachState in data.states) {
+        const singleState = data.states[eachState];
+        // console.log(singleCountry);
+        makeNewOptionBoxStates(singleState);
 
-        selectElem2.addEventListener("change", function (e) {
-          if (e.target.value == singleCountry.state_name) {
-            console.log(singleCountry.state_id);
-            //callData2(singleCountry.state_id);
+        selectState.addEventListener("change", function (e) {
+          if (e.target.value == singleState.state_name) {
+            //console.log(singleCountry.state_id);
+            callStateId(singleState.state_id);
           }
         });
       }
 
-      function makeNewOptionBox2(data) {
-        const title2 = data.state_name;
-        if (typeof title2 != "undefined") {
-          const optionBox2 = document.createElement("option");
-          optionBox2.innerHTML = title2;
-          selectElem2.appendChild(optionBox2);
+      function makeNewOptionBoxStates(data) {
+        const stateName = data.state_name;
+        if (typeof stateName != "undefined") {
+          const optionBoxState = document.createElement("option");
+          optionBoxState.innerHTML = stateName;
+          selectState.appendChild(optionBoxState);
         }
       }
 
-      // // tD = '"' + data.Global.TotalDeaths + '"';
-      // // tR = '"' + data.Global.TotalRecovered + '"';
-      // // tC = '"' + data.Global.TotalConfirmed + '"';
+      function callStateId(data) {
+        var url =
+          "https://cdn-api.co-vin.in/api/v2/admin/location/districts/" + data;
+        $.get(url, function (data) {
+          //console.log(data);
+          manupulateData(data);
+        });
+      }
 
-      // // data =`
-      // // <p>${'"'+data.Global.TotalDeaths+'"'}</p>
-      // // <p>${'"'+data.Global.TotalRecovered+'"'}</p>
-      // // <p>${'"'+data.Global.TotalConfirmed+'"'}</p>
-      // // `
-      // function callData2(cData2) {
-      //   tD = '"' + cData.TotalDeaths + '"';
-      //   tR = '"' + cData.TotalRecovered + '"';
-      //   tC = '"' + cData.TotalConfirmed + '"';
-      //   $("#tD").html(tD);
-      //   $("#tR").html(tR);
-      //   $("#tC").html(tC);
-      // }
+      const selectDistrict = document.querySelector("select#district");
 
-      // // $("#data").html(data)
-    });
-  }
-});
+      function manupulateData(data) {
+        for (eachDistrict in data.districts) {
+          const singleDistrict = data.districts[eachDistrict];
+          //console.log(singleDistrict);
+          makeNewOptionBoxDistrict(singleDistrict);
 
+          selectDistrict.addEventListener("change", function (e) {
+            if (e.target.value == singleDistrict.district_name) {
+              console.log(singleDistrict.district_name);
+              //callDistrictId(singleDistrict.district_id);
+            }
+          });
+        }
+      }
 
-$(document).ready(function () {
-  init2();
-
-  function init2() {
-    var url = "https://cdn-api.co-vin.in/api/v2/admin/location/districts/17";
-    $.get(url, function (data) {
-      console.log(data);
-
-      // const selectElem2 = document.querySelector("select#state");
-
-      // for (eachCountry in data.states) {
-      //   const singleCountry = data.states[eachCountry];
-      //   // console.log(singleItem);
-      //   makeNewOptionBox2(singleCountry);
-
-      //   selectElem2.addEventListener("change", function (e) {
-      //     if (e.target.value == singleCountry.state_name) {
-      //       console.log(singleCountry.state_id);
-      //       //callData2(singleCountry);
-      //     }
-      //   });
-      // }
-
-      // function makeNewOptionBox2(data) {
-      //   const title2 = data.state_name;
-      //   if (typeof title2 != "undefined") {
-      //     const optionBox2 = document.createElement("option");
-      //     optionBox2.innerHTML = title2;
-      //     selectElem2.appendChild(optionBox2);
-      //   }
-      // }
-
-      // // tD = '"' + data.Global.TotalDeaths + '"';
-      // // tR = '"' + data.Global.TotalRecovered + '"';
-      // // tC = '"' + data.Global.TotalConfirmed + '"';
-
-      // // data =`
-      // // <p>${'"'+data.Global.TotalDeaths+'"'}</p>
-      // // <p>${'"'+data.Global.TotalRecovered+'"'}</p>
-      // // <p>${'"'+data.Global.TotalConfirmed+'"'}</p>
-      // // `
-      // function callData2(cData2) {
-      //   tD = '"' + cData.TotalDeaths + '"';
-      //   tR = '"' + cData.TotalRecovered + '"';
-      //   tC = '"' + cData.TotalConfirmed + '"';
-      //   $("#tD").html(tD);
-      //   $("#tR").html(tR);
-      //   $("#tC").html(tC);
-      // }
-
-      // // $("#data").html(data)
+      function makeNewOptionBoxDistrict(data) {
+        console.log(data);
+        const districtName = data.district_name;
+        if (typeof districtName != "undefined") {
+          const optionBoxDistrict = document.createElement("option");
+          optionBoxDistrict.innerHTML = districtName;
+          selectDistrict.appendChild(optionBoxDistrict);
+        }
+      }
     });
   }
 });
