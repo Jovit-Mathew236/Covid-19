@@ -181,7 +181,7 @@ $(document).ready(function () {
       <p>${'Slots : '+singleCenter.slots}</p>
       <p>${'Vaccine : '+singleCenter.vaccine}</p>
 
-      <iframe src="https://maps.google.com/maps?q=" + singleCenter.lat + "," + singleCenter.long + "&hl=es&z=14&amp;output=embed" frameborder="0"></iframe>
+      <iframe src="https://maps.google.com/maps?q=${singleCenter.lat},${singleCenter.long}&hl=en&z=14&amp;output=embed" frameborder="0"></iframe>
       `;
       $("div#result").html(result)
             }
