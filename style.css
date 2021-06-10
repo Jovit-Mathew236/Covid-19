@@ -398,7 +398,9 @@ html {
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
-  color: #004eff;
+  color: #000000;
+  text-shadow: 0px 1px 0px rgb(255, 255, 255);
+  padding: 5px 0px;
 }
 #form select {
   border-radius: 20px;
@@ -406,6 +408,15 @@ html {
   margin: auto;
   min-width: 100%;
   cursor: pointer;
+}
+.result{
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  margin: 2rem auto;
+  border-radius: 2rem;
+  background-color: rgba(195, 195, 195, 0.479);
+  backdrop-filter: blur(5px);
 }
 .about {
   margin-top: 0vh;
