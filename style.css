@@ -415,8 +415,13 @@ html {
   height: 50%;
   margin: 2rem auto;
   border-radius: 2rem;
-  background-color: rgba(195, 195, 195, 0.479);
+  background-color: rgb(255, 255, 255);
   backdrop-filter: blur(5px);
+}
+.result .details{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
 }
 .about {
   margin-top: 0vh;

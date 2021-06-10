@@ -167,25 +167,27 @@ $(document).ready(function () {
               // callCenterId(singleCenter);
               
         const result =`
-      <p>${'address:'+singleCenter.address}</p>
-      <p>${'address:'+singleCenter.block_name}</p>
-      <p>${'address:'+singleCenter.available_capacity_dose1}</p>
-      <p>${'address:'+singleCenter.available_capacity_dose2}</p>
-      <p>${'address:'+singleCenter.addres}</p>
-      <p>${'address:'+singleCenter.addres}</p>
-      <p>${'address:'+singleCenter.addres}</p>
-      <p>${'address:'+singleCenter.addres}</p>
-      <p>${'address:'+singleCenter.addres}</p>
-      <p>${'address:'+singleCenter.addres}</p>
-      <p>${'address:'+singleCenter.addres}</p>
+      <p>${'Address : '+singleCenter.address}</p>
+      <p>${'Block Name : '+singleCenter.block_name}</p>
+      <p>${'Center Id : '+singleCenter.center_id}</p>
+      <p>${'Dose1 : '+singleCenter.available_capacity_dose1}</p>
+      <p>${'Dose2 : '+singleCenter.available_capacity_dose2}</p>
+      <p>${'Date : '+singleCenter.date}</p>
+      <p>${'Fee Type : '+singleCenter.fee_type}</p>
+      <p>${'Fee : '+singleCenter.fee}</p>
+      <p>${'Age Limit : '+singleCenter.min_age_limit}</p>
+      <p>${'From : '+singleCenter.from}</p>
+      <p>${'To : '+singleCenter.to}</p>
+      <p>${'Slots : '+singleCenter.slots}</p>
+      <p>${'Vaccine : '+singleCenter.vaccine}</p>
 
+      <iframe src="https://maps.google.com/maps?q=" + singleCenter.lat + "," + singleCenter.long + "&hl=es&z=14&amp;output=embed" frameborder="0"></iframe>
       `;
       $("div#result").html(result)
             }
           });
         }
       }
-
       function makeNewOptionBoxCenter(data) {
         //console.log(data);
         const centerName = data.name;
@@ -195,29 +197,8 @@ $(document).ready(function () {
           selectCenter.appendChild(optionBoxCenter);
         }
       }
-
-
-      // function callCenterId(centerData){
-      //   console.log(centerData);
-        
-      // }
     });
   }
 });
 
 
-// address: "Vizhickathodu PHCVizhickathodu PO Kanjirappally Kottayam"
-// available_capacity: 0
-// available_capacity_dose1: 0
-// available_capacity_dose2: 0
-// block_name: "Erumely CHC"
-// center_id: 127701
-// date: "10-06-2021"
-// fee: "0"
-// fee_type: "Free"
-// from: "09:00:00"
-// min_age_limit: 18
-// pincode: 686518
-// slots: (4) ["09:00AM-10:00AM", "10:00AM-11:00AM", "11:00AM-12:00PM", "12:00PM-02:00PM"]
-// to: "14:00:00"
-// vaccine: "COVISHIELD"
