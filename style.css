@@ -345,6 +345,7 @@ p {
   align-items: center;
   flex-wrap: wrap;
   overflow-x: scroll;
+  
 }
 
 /*Final section */
@@ -506,7 +507,14 @@ p {
   height: 5vh;
   display: flex;
   justify-content: center;
+  color: #969696;
   background-color: rgba(48, 34, 26, 0.863);
+}
+.copyright a{
+  text-decoration: none;
+    color: #0094ff;
+    font-weight: 900;
+
 }
 .social-media {
   display: flex;
