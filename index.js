@@ -20,7 +20,7 @@ $(document).ready(function () {
   function init() {
     var url = "https://api.covid19api.com/summary";
     $.get(url, function (data) {
-      //console.log(data);
+      console.log(data);
 
       const selectElem = document.querySelector("select#select");
 
@@ -158,7 +158,7 @@ $(document).ready(function () {
       function manupulateData1(data) {
         for (eachCenter in data.sessions) {
           const singleCenter = data.sessions[eachCenter];
-          //console.log(singleCenter);
+          console.log(singleCenter);
           makeNewOptionBoxCenter(singleCenter);
 
           selectCenter.addEventListener("change", function (e) {
@@ -180,8 +180,6 @@ $(document).ready(function () {
       <p>${'To : '+singleCenter.to}</p>
       <p>${'Slots : '+singleCenter.slots}</p>
       <p>${'Vaccine : '+singleCenter.vaccine}</p>
-
-      <iframe src="https://maps.google.com/maps?q=${singleCenter.lat},${singleCenter.long}&hl=en&z=14&amp;output=embed" frameborder="0"></iframe>
       `;
       $("div#result").html(result)
             }
