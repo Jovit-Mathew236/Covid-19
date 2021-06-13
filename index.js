@@ -14,13 +14,24 @@ const myFunction = () => {
   }
 };
 
+function showMenu() {
+  var menu = document.getElementById("aA");
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+}
+
+// API Calling
+
 $(document).ready(function () {
   init();
 
   function init() {
     var url = "https://api.covid19api.com/summary";
     $.get(url, function (data) {
-      console.log(data);
+      //console.log(data);
 
       const selectElem = document.querySelector("select#select");
 
@@ -69,11 +80,9 @@ $(document).ready(function () {
   }
 });
 
-
-
 var date = new Date();
-var today = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
-
+var today =
+  date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
 $(document).ready(function () {
   init2();
@@ -146,7 +155,10 @@ $(document).ready(function () {
 
       function callDistrictId(districtData) {
         var url =
-          "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id="+districtData+"&date="+today;
+          "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=" +
+          districtData +
+          "&date=" +
+          today;
         $.get(url, function (data) {
           //console.log(data);
           manupulateData1(data);
@@ -165,23 +177,23 @@ $(document).ready(function () {
             if (e.target.value == singleCenter.name) {
               //console.log(singleCenter.address);
               // callCenterId(singleCenter);
-              
-        const result =`
-      <p>${'Address : '+singleCenter.address}</p>
-      <p>${'Block Name : '+singleCenter.block_name}</p>
-      <p>${'Center Id : '+singleCenter.center_id}</p>
-      <p>${'Dose1 : '+singleCenter.available_capacity_dose1}</p>
-      <p>${'Dose2 : '+singleCenter.available_capacity_dose2}</p>
-      <p>${'Date : '+singleCenter.date}</p>
-      <p>${'Fee Type : '+singleCenter.fee_type}</p>
-      <p>${'Fee : '+singleCenter.fee}</p>
-      <p>${'Age Limit : '+singleCenter.min_age_limit}</p>
-      <p>${'From : '+singleCenter.from}</p>
-      <p>${'To : '+singleCenter.to}</p>
-      <p>${'Slots : '+singleCenter.slots}</p>
-      <p>${'Vaccine : '+singleCenter.vaccine}</p>
+
+              const result = `
+      <p>${"Address : " + singleCenter.address}</p>
+      <p>${"Block Name : " + singleCenter.block_name}</p>
+      <p>${"Center Id : " + singleCenter.center_id}</p>
+      <p>${"Dose1 : " + singleCenter.available_capacity_dose1}</p>
+      <p>${"Dose2 : " + singleCenter.available_capacity_dose2}</p>
+      <p>${"Date : " + singleCenter.date}</p>
+      <p>${"Fee Type : " + singleCenter.fee_type}</p>
+      <p>${"Fee : " + singleCenter.fee}</p>
+      <p>${"Age Limit : " + singleCenter.min_age_limit}</p>
+      <p>${"From : " + singleCenter.from}</p>
+      <p>${"To : " + singleCenter.to}</p>
+      <p>${"Slots : " + singleCenter.slots}</p>
+      <p>${"Vaccine : " + singleCenter.vaccine}</p>
       `;
-      $("div#result").html(result)
+              $("div#result").html(result);
             }
           });
         }
@@ -198,5 +210,3 @@ $(document).ready(function () {
     });
   }
 });
-
-
