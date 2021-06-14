@@ -15,7 +15,8 @@ const myFunction = () => {
 };
 
 function showMenu() {
-  var menu = document.getElementById("aA");
+  var menu = document.getElementById("navMenu");
+  var icon = document.getElementsByClassName(".fa-bars");
   if (menu.style.display === "flex") {
     menu.style.display = "none";
   } else {
@@ -23,7 +24,9 @@ function showMenu() {
   }
 }
 
-// API Calling
+// API Calling >>
+
+// Covid 19 status Country wise
 
 $(document).ready(function () {
   init();
@@ -80,6 +83,9 @@ $(document).ready(function () {
   }
 });
 
+
+// API Covid 19  vaccine Availablity 
+
 var date = new Date();
 var today =
   date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
@@ -103,6 +109,8 @@ $(document).ready(function () {
           if (e.target.value == singleState.state_name) {
             //console.log(singleCountry.state_id);
             callStateId(singleState.state_id);
+            $("#district").empty()
+            // $("#center").empty()
           }
         });
       }
@@ -137,6 +145,7 @@ $(document).ready(function () {
             if (e.target.value == singleDistrict.district_name) {
               //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
+              $("#center").empty()
             }
           });
         }
