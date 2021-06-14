@@ -148,6 +148,9 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(
+356deg
+, #d8e2ec, #c8a68b);
 }
 
 .section2 img {
