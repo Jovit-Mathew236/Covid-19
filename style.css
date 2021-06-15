@@ -41,13 +41,11 @@ html {
   flex-wrap: nowrap;
 }
 .logo img {
-  float: right;
   height: 30px;
   width: 30px;
   margin: auto 2vh;
 }
 .menu {
-  float: left;
   margin: auto 0vh;
   display: flex;
   justify-content: center;
@@ -65,10 +63,17 @@ html {
 .menu ul a:hover {
   -webkit-text-stroke: thick;
 }
-.menu i {
+.menu input{
+  display: none;
+}
+.menu label{
+  z-index: 2;
+}
+.menu label i {
   color: white;
   display: none;
 }
+
 @media only screen and (max-width: 750px) {
   .menu {
     float: left;
@@ -78,7 +83,7 @@ html {
     justify-content: center;
     align-items: center;
   }
-  .menu i {
+  .menu label i {
     display: block;
     margin: 1rem 1rem 0rem 11rem;
     font-size: 2rem;
@@ -88,7 +93,6 @@ html {
     display: block;
   }
   .menu ul a:hover {
-    /* background-color: rgba(61, 61, 61, 0.116); */
     -webkit-text-stroke: thick;
   }
   .menu ul {
@@ -99,6 +103,9 @@ html {
     line-height: 4rem;
     backdrop-filter: brightness(0.2);
     height: auto;
+  }
+  #cheking:checked ~ label i::before{
+    content: "\f00d";
   }
 }
 
@@ -148,9 +155,8 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(
-356deg
-, #d8e2ec, #c8a68b);
+  border-bottom-right-radius: 100px;
+  background-color: black;
 }
 
 .section2 img {
@@ -202,20 +208,17 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: calc(10px + 5vw);
     position: absolute;
     margin: auto 2vh;
     max-height: 100vh;
     background-color: #00000096;
     backdrop-filter: blur(14px);
-    /* margin-top: 25vh; */
     padding: 1rem 2rem;
     border-radius: 20px;
     width: fit-content;
     box-shadow: inset 0px 0px 20px 8px #0000008a;
     border: none;
     overflow: overlay;
-    /* max-width: 80vw;*/
   }
   .section2 h1 {
     padding-top: 3vh;
@@ -250,7 +253,8 @@ html {
   outline: none;
   border: none;
 }
-/* Table */
+
+/* Covid 19 status */
 
 .covid-status {
   width: 100vw;
@@ -307,6 +311,7 @@ html {
 }
 
 /*Section 3*/
+
 #section3 h1 {
   color: #0421ff;
   text-align: center;
@@ -434,6 +439,11 @@ p {
   background-color: rgb(255, 255, 255);
   backdrop-filter: blur(5px);
 }
+.result h4 {
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #0421ff;
+}
 .result .details {
   display: flex;
   flex-direction: column;
@@ -476,10 +486,7 @@ span {
   font-size: small;
   text-align: center;
 }
-.help-line a,
-.help-line a p,
-.links a,
-.social-media a {
+.help-line a ,.help-line a p ,.links a ,.social-media a {
   color: white;
   text-decoration: none;
   margin: 0%;
@@ -491,14 +498,23 @@ span {
 }
 .social-media a {
   display: flex;
-  justify-content: center;
   align-items: center;
   right: 0;
 }
-.social-media img {
-  height: 30px;
-  width: 30px;
+.social-media i {
   margin: 8px;
+}
+.insta {
+  color: #ea00ff;
+}
+.face {
+  color: blue;
+}
+.whtapp {
+  color: green;
+}
+.email {
+  color: orange;
 }
 .email .form2 {
   width: fit-content;
@@ -590,5 +606,3 @@ span {
   color: #0094ff;
   font-weight: 500;
 }
-
-

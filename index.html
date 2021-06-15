@@ -17,19 +17,27 @@
 </head>
 
 <body>
+
   <!-- Section one Start -->
+
   <div class="section1" id="section1">
     <div class="navbar">
       <div class="logo">
-        <img src="./Images/logo1.png" alt="">
+        <img src="./Images/logo1.png" alt="logo">
       </div>
       <div class="menu">
-        <i onclick="showMenu()" class="fas fa-bars"></i>
+        <input type="checkbox" id="cheking">
+        <label for="cheking">
+          <i onclick="showMenu()" class="fas fa-bars"></i>
+        </label>
+        
         <ul id="navMenu">
           <a href="#section2">COVID-19</a>
           <a href="#section3">MYTH & FACT</a>
           <a href="#section4">Q & A</a>
-          <a href="#fin_sec">ABOUT</a>
+          <a href="#about">ABOUT</a>
+          <a href="whatsapp://send?text=https://jovit-mathew236.github.io/Covid-19/"
+            data-action="share/whatsapp/share">SHARE</a>
         </ul>
 
       </div>
@@ -41,14 +49,16 @@
       <div class="head">
         <h1>Why You should take Covid vaccine?</h1>
       </div>
+
       <!-- Section one End -->
 
       <!-- Section Two Start -->
+
       <a href="#section2"><button class="btn">TAKE A TOUR</button></a>
     </div>
   </div>
   <div class="section2" id="section2">
-    <div><img src="./Images/sec2.jpg" alt=""></div>
+    <div><img src="./Images/sec2.jpg" alt="bgimg"></div>
     <div class="sec2_content">
       <h1>COVID-19 vaccination is a safer way to help build protection</h1>
       <p> And if you get sick, you could spread the disease to friends,
@@ -65,8 +75,8 @@
   <!-- Section Two End -->
 
   <!-- Covid-19 Status Start-->
-  <div class="covid-status">
 
+  <div class="covid-status">
     <h1>Covid-19 Status</h1>
     <select name="country" id="select">
       <option value="0">Select Country</option>
@@ -74,27 +84,29 @@
     <div class="data-box">
       <div>
         <h2>Total Death</h2>
-        <p id="tD">0</p>
+        <p id="totalDeaths">0</p>
       </div>
       <div>
         <h2>Total Recoverd</h2>
-        <p id="tR">0</p>
+        <p id="totalRecoverd">0</p>
       </div>
       <div>
         <h2>Total Confirmed</h2>
-        <p id="tC">0</p>
+        <p id="totalConfirmed">0</p>
       </div>
     </div>
   </div>
+
   <!-- covid-19 status End -->
 
   <!-- Section Three start -->
+
   <div id="section3">
     <h1>COVID-19 Vaccines: Myth Versus Fact</h1>
     <div class="all-cards">
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/M1.jpg" alt="Avatar">
+          <img src="./Images/M1.jpg" alt="M1">
         </div>
         <h4><b>Fact - </b></h4>
         <p>Some participants in the vaccine clinical trials did report
@@ -104,11 +116,11 @@
           used in a vaccine. That’s why experts recommend people with a
           history of severe allergic reactions — such as anaphylaxis — to
           the ingredients of the vaccine should not get the vaccination.
-          </p>
+        </p>
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/M2a.jpg" alt="Avatar">
+          <img src="./Images/M2.jpg" alt="M2">
         </div>
         <h4><b>Fact - </b></h4>
         <p>The authorized vaccines are proven safe and effective. Although they were developed in record time, they have
@@ -116,11 +128,11 @@
           standards. No steps were skipped. Instead, we can thank the unprecedented worldwide collaboration and
           investment for the shorter timeframe on the development of the vaccines. The clinical trials and safety
           reviews actually took about the same amount of time as other vaccines.
-          </p>
+        </p>
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/M3.jpg" alt="Avatar">
+          <img src="./Images/M3.jpg" alt="M3">
         </div>
         <h4><b>Fact - </b></h4>
         <p>The first vaccines granted emergency use authorization contain messenger RNA (mRNA), which instructs cells to
@@ -128,41 +140,41 @@
           builds an immune response by creating antibodies — teaching the body how to protect against future infection.
           The mRNA never enters the nucleus of the cell, which is where our DNA (genetic material) is kept. The body
           gets rid of the mRNA soon after it’s finished using the instructions.
-          </p>
+        </p>
       </div>
-
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/M4.jpg" alt="Avatar">
+          <img src="./Images/M4.jpg" alt="M4">
         </div>
         <h4><b>Fact - </b></h4>
         <p>Misinformation on social media suggests the vaccine trains the body to attack syncytin-1, a protein in the
           placenta, which could lead to infertility in women. The truth is, there’s an amino acid sequence shared
           between the spike protein and a placental protein; however, experts say it’s too short to trigger an immune
           response and therefore doesn’t affect fertility.
-          </p>
+        </p>
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/M5.jpg" alt="Avatar">
+          <img src="./Images/M5.jpg" alt="M5">
         </div>
         <h4><b>Fact - </b></h4>
         <p>Regardless of your risk, you can still contract the infection and spread it to others, so it’s important you
           get vaccinated. Once the vaccine is widely available, it’s recommended that as many eligible adults as
           possible get the vaccine. It’s not only to protect you but your family and community as well.
-          </p>
+        </p>
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/M6.jpg" alt="Avatar">
+          <img src="./Images/M6.jpg" alt="M6">
         </div>
         <h4><b>Fact - </b></h4>
         <p>There is no evidence to suggest that getting the vaccine heightens your risk to become sick from another
           infection such as the flu.
-          </p>
+        </p>
       </div>
     </div>
   </div>
+
   <!-- Section Three End -->
 
   <!-- Section Four Start -->
@@ -173,57 +185,70 @@
     <div id="content2">
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/Q1.jpg" alt="Avatar">
+          <img src="./Images/Q1.jpg" alt="Q1">
         </div>
         <h4><b>Ans - </b></h4>
-        <p>Yes, you should be vaccinated regardless of whether you 
-          already had COVID-19. That’s because experts do not yet 
-          know how long you are protected from getting sick again 
-          after recovering from COVID-19. Even if you have already 
-          recovered from COVID-19, it is possible—although rare—that 
-          you could be infected with the virus that causes COVID-19 
-          again. If you were treated for COVID-19 with monoclonal antibodies 
-          or convalescent plasma, you should wait 90 days before getting 
+        <p>Yes, you should be vaccinated regardless of whether you
+          already had COVID-19. That’s because experts do not yet
+          know how long you are protected from getting sick again
+          after recovering from COVID-19. Even if you have already
+          recovered from COVID-19, it is possible—although rare—that
+          you could be infected with the virus that causes COVID-19
+          again. If you were treated for COVID-19 with monoclonal antibodies
+          or convalescent plasma, you should wait 90 days before getting
           a COVID-19 vaccine.
-          </p>
+        </p>
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/Q2.jpg" alt="Avatar">
+          <img src="./Images/Q2.jpg" alt="Q2">
         </div>
         <h4><b>Ans - </b></h4>
-        <p>No. Fully vaccinated people can resume activities without wearing a mask or physically distancing, except where required by federal, state, local, tribal, or territorial laws, rules, and regulations, including local business and workplace guidance. If you are fully vaccinated, you can resume activities that you did before the pandemic.
-          </p>
+        <p>No. Fully vaccinated people can resume activities without wearing a mask or physically distancing, except
+          where required by federal, state, local, tribal, or territorial laws, rules, and regulations, including local
+          business and workplace guidance. If you are fully vaccinated, you can resume activities that you did before
+          the pandemic.
+        </p>
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/Q3.jpg" alt="Avatar">
+          <img src="./Images/Q3.jpg" alt="Q3">
         </div>
         <h4><b>Ans - </b></h4>
-        <p>After getting vaccinated, you might have some side effects, which are normal signs that your body is building protection. Common side effects are pain, redness, and swelling in the arm where you received the shot, as well as tiredness, headache, muscle pain, chills, fever, and nausea throughout the rest of the body. These side effects could affect your ability to do daily activities, but they should go away in a few days.
+        <p>After getting vaccinated, you might have some side effects, which are normal signs that your body is building
+          protection. Common side effects are pain, redness, and swelling in the arm where you received the shot, as
+          well as tiredness, headache, muscle pain, chills, fever, and nausea throughout the rest of the body. These
+          side effects could affect your ability to do daily activities, but they should go away in a few days.
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/Q4.jpg" alt="Avatar">
+          <img src="./Images/Q4.jpg" alt="Q4">
         </div>
         <h4><b>Ans - </b></h4>
         <p>Yes, if you are pregnant, you can receive a COVID-19 vaccine.
-          You might want to have a conversation with your healthcare provider to help you decide whether to get vaccinated. While such a conversation might be helpful, it is not required before vaccination.
+          You might want to have a conversation with your healthcare provider to help you decide whether to get
+          vaccinated. While such a conversation might be helpful, it is not required before vaccination.
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/Q5.jpg" alt="Avatar">
+          <img src="./Images/Q5.jpg" alt="Q5">
         </div>
         <h4><b>Ans - </b></h4>
-        <p>We don’t know how long protection lasts for those who are vaccinated. What we do know is that COVID-19 has caused very serious illness and death for a lot of people. If you get COVID-19, you also risk giving it to loved ones who may get very sick. Getting a COVID-19 vaccine is a safer choice.
-          Experts are working to learn more about both natural immunity and vaccine-induced immunity. CDC will keep the public informed as new evidence becomes available.
+        <p>We don’t know how long protection lasts for those who are vaccinated. What we do know is that COVID-19 has
+          caused very serious illness and death for a lot of people. If you get COVID-19, you also risk giving it to
+          loved ones who may get very sick. Getting a COVID-19 vaccine is a safer choice.
+          Experts are working to learn more about both natural immunity and vaccine-induced immunity. CDC will keep the
+          public informed as new evidence becomes available.
       </div>
       <div class="card-container">
         <div class="img-container">
-          <img src="./Images/Q6.jpg" alt="Avatar">
+          <img src="./Images/Q6.jpg" alt="Q6">
         </div>
         <h4><b>Ans - </b></h4>
-        <p>No. People with COVID-19 who have symptoms should wait to be vaccinated until they have recovered from their illness and have met the criteria for discontinuing isolation; those without symptoms should also wait until they meet the criteria before getting vaccinated. This guidance also applies to people who get COVID-19 before getting their second dose of vaccine.
+        <p>No. People with COVID-19 who have symptoms should wait to be vaccinated until they have recovered from their
+          illness and have met the criteria for discontinuing isolation; those without symptoms should also wait until
+          they meet the criteria before getting vaccinated. This guidance also applies to people who get COVID-19 before
+          getting their second dose of vaccine.
       </div>
     </div>
   </div>
@@ -232,6 +257,7 @@
   <!-- Section Four End -->
 
   <!--Final Section-->
+
   <div id="fin_sec">
     <footer>
       <div class="fin_img">
@@ -252,17 +278,18 @@
                 <option value="">Select Center</option>
               </select>
             </div>
+          </form>
         </div>
         <div class="result">
           <div class="details" id="result">
-            <!-- <h4>Center Details</h4> -->
+
           </div>
         </div>
       </div>
 
-      <div class="about">
+      <div id="about" class="about">
         <div class="about-logo">
-          <img src="./Images/logo1.png" alt="">
+          <img src="./Images/logo1.png" alt="logo">
           <h1>SJCET</h1>
         </div>
         <hr>
@@ -293,37 +320,39 @@
             <a href="https://kerala.gov.in/helpline">Help line Numbers</a>
             <a href="https://arogyakeralam.gov.in/">National Health Mission</a>
             <a href="https://covid19jagratha.kerala.nic.in/">Covid 19 Jagratha</a>
+            <a href="https://dashboard.kerala.gov.in/helplines.php">Kerala Covid War Room</a>
           </div>
 
           <div class="social-media">
             <h4>Social Media</h4>
-            <a href="https://www.instagram.com/covid19helplineindia/?hl=en"><img
-                src="https://img.icons8.com/color/48/000000/instagram-new--v2.png" />Instagram</a>
-            <a href=""><img src="https://img.icons8.com/color/50/000000/facebook-circled--v4.png" />Facebook</a>
-            <a href="https://wa.me/918281312912"><img
-                src="https://img.icons8.com/color/48/000000/whatsapp--v5.png" />whatsapp</a>
+            <a href="https://www.instagram.com/covid19helplineindia/?hl=en"><i class=" insta fab fa-instagram"></i>
+              Instagram</a>
+            <a href=""><i class="face fab fa-facebook"></i> Facebook</a>
+            <a href="https://wa.me/918281312912"><i class="whtapp fab fa-whatsapp"></i> whatsapp</a>
+            <a
+              href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKkkRWmXqldJrTcXCqGCXFMZRdRfHbsKsgjPPCqwgHSCqXKGFZCsScdDXzdFvxgDvfmhZDw"><i
+                class="email fas fa-envelope"></i> Email</a>
           </div>
 
           <div class="email">
-
             <div class="form2">
               <h4>Email Here</h4>
-              <form action="" autocomplete="off">
+              <form id="submit-form" action="" autocomplete="off">
                 <div class="form-all">
                   <div class="form-group">
-                    <input type="text" required>
-                    <label for="name">Name</label>
+                    <input type="text" name="Name" required>
+                    <label for="fname">Name</label>
                   </div>
                   <div class="form-group">
-                    <input type="number" required>
+                    <input type="number" name="PhoneNo" required>
                     <label for="phno">Phone No</label>
                   </div>
                   <div class="form-group">
-                    <input type="text" required>
+                    <input type="email" name="Email" required>
                     <label for="email">Email</label>
                   </div>
                   <div class="form-group">
-                    <input type="text" required>
+                    <input type="text" name="Message" required>
                     <label for="msg">Message</label>
                   </div>
                   <div class="form-group">
@@ -332,8 +361,30 @@
                 </div>
               </form>
             </div>
-
           </div>
+
+          <!-- Email form submit js start -->
+
+          <script>
+            $("#submit-form").submit((e) => {
+              e.preventDefault()
+              $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbwUd6eQCT1jWF6xsgYAeuRFb7p2qN-Hw5LUQrrEtS7DBdVvcRW0h6dsxDQHSyV51cPYMA/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                success: function (response) {
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                },
+                error: function (err) {
+                  alert("Something Error")
+                }
+              })
+            })
+          </script>
+
+          <!-- Email form submit js End -->
+
         </div>
       </div>
       <div class="copyright">
@@ -342,21 +393,9 @@
       </div>
     </footer>
   </div>
+
   <!-- Final Section End -->
 
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
 </body>
 
 </html>

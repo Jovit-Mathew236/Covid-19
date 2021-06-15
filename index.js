@@ -1,3 +1,5 @@
+// Read more option js
+
 const myFunction = () => {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
@@ -16,7 +18,6 @@ const myFunction = () => {
 
 function showMenu() {
   var menu = document.getElementById("navMenu");
-  var icon = document.getElementsByClassName(".fa-bars");
   if (menu.style.display === "flex") {
     menu.style.display = "none";
   } else {
@@ -36,17 +37,17 @@ $(document).ready(function () {
     $.get(url, function (data) {
       //console.log(data);
 
-      const selectElem = document.querySelector("select#select");
+      const selectCountry = document.querySelector("select#select");
 
-      for (eachItem in data.Countries) {
-        const singleItem = data.Countries[eachItem];
-        // console.log(singleItem);
-        makeNewOptionBox(singleItem);
+      for (eachCountry in data.Countries) {
+        const singleCountry = data.Countries[eachCountry];
+        // console.log(singleCountry);
+        makeNewOptionBox(singleCountry);
 
-        selectElem.addEventListener("change", function (e) {
-          if (e.target.value == singleItem.Country) {
-            //console.log(singleItem);
-            callData(singleItem);
+        selectCountry.addEventListener("change", function (e) {
+          if (e.target.value == singleCountry.Country) {
+            //console.log(singleCountry);
+            callData(singleCountry);
           }
         });
       }
@@ -56,39 +57,26 @@ $(document).ready(function () {
         if (typeof title != "undefined") {
           const optionBox = document.createElement("option");
           optionBox.innerHTML = title;
-          selectElem.appendChild(optionBox);
+          selectCountry.appendChild(optionBox);
         }
       }
 
-      // tD = '"' + data.Global.TotalDeaths + '"';
-      // tR = '"' + data.Global.TotalRecovered + '"';
-      // tC = '"' + data.Global.TotalConfirmed + '"';
-
-      // data =`
-      // <p>${'"'+data.Global.TotalDeaths+'"'}</p>
-      // <p>${'"'+data.Global.TotalRecovered+'"'}</p>
-      // <p>${'"'+data.Global.TotalConfirmed+'"'}</p>
-      // `
       function callData(cData) {
-        tD = '"' + cData.TotalDeaths + '"';
-        tR = '"' + cData.TotalRecovered + '"';
-        tC = '"' + cData.TotalConfirmed + '"';
-        $("#tD").html(tD);
-        $("#tR").html(tR);
-        $("#tC").html(tC);
+        totalDeaths = cData.TotalDeaths;
+        totalRecoverd = cData.TotalRecovered;
+        totalConfirmed = cData.TotalConfirmed;
+        $("#totalDeaths").html(totalDeaths);
+        $("#totalRecoverd").html(totalRecoverd);
+        $("#totalConfirmed").html(totalConfirmed);
       }
-
-      // $("#data").html(data)
     });
   }
 });
 
+// API Covid 19  vaccine Availablity
 
-// API Covid 19  vaccine Availablity 
-
-var date = new Date();
-var today =
-  date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+var date = new Date(); 
+var today = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
 $(document).ready(function () {
   init2();
@@ -102,15 +90,14 @@ $(document).ready(function () {
 
       for (eachState in data.states) {
         const singleState = data.states[eachState];
-        // console.log(singleCountry);
+        // console.log(singleState);
         makeNewOptionBoxStates(singleState);
 
         selectState.addEventListener("change", function (e) {
           if (e.target.value == singleState.state_name) {
-            //console.log(singleCountry.state_id);
+            //console.log(singleState.state_id);
             callStateId(singleState.state_id);
-            $("#district").empty()
-            // $("#center").empty()
+            $("#district").empty();
           }
         });
       }
@@ -145,7 +132,7 @@ $(document).ready(function () {
             if (e.target.value == singleDistrict.district_name) {
               //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
-              $("#center").empty()
+              $("#center").empty();
             }
           });
         }
@@ -188,6 +175,7 @@ $(document).ready(function () {
               // callCenterId(singleCenter);
 
               const result = `
+      <h4>Center Details</h4>
       <p>${"Address : " + singleCenter.address}</p>
       <p>${"Block Name : " + singleCenter.block_name}</p>
       <p>${"Center Id : " + singleCenter.center_id}</p>
