@@ -33,27 +33,27 @@ $(document).ready(function () {
   init();
 
   function init() {
-    var url = "https://api.covid19api.com/summary";
+    var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort";
     $.get(url, function (data) {
-      //console.log(data);
+      // console.log(data);
 
       const selectCountry = document.querySelector("select#select");
 
-      for (eachCountry in data.Countries) {
-        const singleCountry = data.Countries[eachCountry];
+      for (eachCountry in data) {
+        const singleCountry = data[eachCountry];
         // console.log(singleCountry);
         makeNewOptionBox(singleCountry);
 
         selectCountry.addEventListener("change", function (e) {
-          if (e.target.value == singleCountry.Country) {
-            //console.log(singleCountry);
-            callData(singleCountry);
+          if (e.target.value == singleCountry.country) {
+            console.log(singleCountry);
+            callCountry(singleCountry);
           }
         });
       }
 
       function makeNewOptionBox(data) {
-        const title = data.Country;
+        const title = data.country;
         if (typeof title != "undefined") {
           const optionBox = document.createElement("option");
           optionBox.innerHTML = title;
@@ -61,13 +61,15 @@ $(document).ready(function () {
         }
       }
 
-      function callData(cData) {
-        totalDeaths = cData.TotalDeaths;
-        totalRecoverd = cData.TotalRecovered;
-        totalConfirmed = cData.TotalConfirmed;
+      function callCountry(countryData) {
+        totalDeaths = countryData.deaths;
+        totalRecoverd = countryData.recovered;
+        totalConfirmed = countryData.cases;
+        newCases = countryData.todayCases;
         $("#totalDeaths").html(totalDeaths);
         $("#totalRecoverd").html(totalRecoverd);
         $("#totalConfirmed").html(totalConfirmed);
+        $("#newCases").html(newCases);
       }
     });
   }
@@ -166,7 +168,7 @@ $(document).ready(function () {
       function manupulateData1(data) {
         for (eachCenter in data.sessions) {
           const singleCenter = data.sessions[eachCenter];
-          console.log(singleCenter);
+          //console.log(singleCenter);
           makeNewOptionBoxCenter(singleCenter);
 
           selectCenter.addEventListener("change", function (e) {

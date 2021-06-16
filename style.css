@@ -300,14 +300,17 @@ html {
   margin: 1rem;
   color: white;
 }
-.data-box p#tD {
-  background-image: linear-gradient(222deg, #ff0404 -20%, #1100ffda 123%);
+.data-box p#totalDeaths {
+  background-image: linear-gradient(222deg#fa6e3f -20%, #1100ffa3 123%);
 }
-.data-box p#tR {
+.data-box p#totalRecoverd {
   background-image: linear-gradient(222deg, #36ff04 -20%, #1100ffda 123%);
 }
-.data-box p#tC {
+.data-box p#totalConfirmed {
   background-image: linear-gradient(222deg, #fbff04 -20%, #1100ffda 123%);
+}
+.data-box p#newCases {
+  background-image: linear-gradient(235deg, #04f5ffbd 0%, #1100ff96 114%);
 }
 
 /*Section 3*/
@@ -423,7 +426,7 @@ p {
   text-shadow: 0px 1px 0px rgb(255, 255, 255);
   padding: 5px 0px;
 }
-#form select {
+#form select ,#form input{
   border-radius: 20px;
   width: fit-content;
   margin: auto;
