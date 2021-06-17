@@ -99,7 +99,7 @@ $(document).ready(function () {
           if (e.target.value == singleState.state_name) {
             //console.log(singleState.state_id);
             callStateId(singleState.state_id);
-            $("#district").empty();
+            $("#district").reload();
           }
         });
       }
@@ -134,7 +134,7 @@ $(document).ready(function () {
             if (e.target.value == singleDistrict.district_name) {
               //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
-              $("#center").empty();
+              $("#center").reload();
             }
           });
         }
