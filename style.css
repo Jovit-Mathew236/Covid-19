@@ -402,6 +402,7 @@ p {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.219);
   backdrop-filter: blur(15px);
+  box-shadow: inset 0px 0px 20px 8px #000000b8;
 }
 #form {
   display: flex;
