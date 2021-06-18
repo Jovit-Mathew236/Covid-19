@@ -35,42 +35,57 @@ $(document).ready(function () {
   function init() {
     var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort";
     $.get(url, function (data) {
-       console.log(data);
+      //console.log(data);
 
-      const selectCountry = document.querySelector("select#select");
+      var url = "https://api.covid19api.com/summary";
+      $.get(url, function (dataGlobal) {
+        //console.log(dataGlobal);
 
-      for (eachCountry in data) {
-        const singleCountry = data[eachCountry];
-        //console.log(singleCountry);
-        makeNewOptionBox(singleCountry);
+        const selectCountry = document.querySelector("select#select");
 
-        selectCountry.addEventListener("change", function (e) {
-          if (e.target.value == singleCountry.country) {
-            // console.log(singleCountry);
-            callCountry(singleCountry);
-          }
-        });
-      }
+        for (eachCountry in data) {
+          const singleCountry = data[eachCountry];
+          //console.log(singleCountry);
+          makeNewOptionBox(singleCountry);
 
-      function makeNewOptionBox(data) {
-        const title = data.country;
-        if (typeof title != "undefined") {
-          const optionBox = document.createElement("option");
-          optionBox.innerHTML = title;
-          selectCountry.appendChild(optionBox);
+          selectCountry.addEventListener("change", function (e) {
+            //console.log(e.target.value);
+            if (e.target.value == singleCountry.country) {
+              // console.log(singleCountry);
+              totalDeaths = singleCountry.deaths;
+              totalRecoverd = singleCountry.recovered;
+              totalConfirmed = singleCountry.cases;
+              newCases = singleCountry.todayCases;
+              if (newCases == "0"){
+                $("#newCases").html("Zero");
+              }else{
+                $("#newCases").html(newCases);
+              }
+              $("#totalDeaths").html(totalDeaths);
+              $("#totalRecoverd").html(totalRecoverd);
+              $("#totalConfirmed").html(totalConfirmed);
+            } if (e.target.value == "global") {
+              totalDeaths = dataGlobal.Global.TotalDeaths;
+              totalRecoverd = dataGlobal.Global.TotalRecovered;
+              totalConfirmed = dataGlobal.Global.TotalConfirmed;
+              newCases = dataGlobal.Global.NewConfirmed;
+              $("#totalDeaths").html(totalDeaths);
+              $("#totalRecoverd").html(totalRecoverd);
+              $("#totalConfirmed").html(totalConfirmed);
+              $("#newCases").html(newCases);
+            }
+          });
         }
-      }
 
-      function callCountry(countryData) {
-        totalDeaths = countryData.deaths;
-        totalRecoverd = countryData.recovered;
-        totalConfirmed = countryData.cases;
-        newCases = countryData.todayCases;
-        $("#totalDeaths").html(totalDeaths);
-        $("#totalRecoverd").html(totalRecoverd);
-        $("#totalConfirmed").html(totalConfirmed);
-        $("#newCases").html(newCases);
-      }
+        function makeNewOptionBox(data) {
+          const title = data.country;
+          if (typeof title != "undefined") {
+            const optionBox = document.createElement("option");
+            optionBox.innerHTML = title;
+            selectCountry.appendChild(optionBox);
+          }
+        }
+      });
     });
   }
 });
@@ -135,6 +150,7 @@ $(document).ready(function () {
             if (e.target.value == singleDistrict.district_name) {
               //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
+              $("#center").empty();
             }
           });
         }
@@ -193,6 +209,9 @@ $(document).ready(function () {
                 selectDate.addEventListener("change", function (e) {
                   singleCenter.sessions.length = 0;
                 });
+                // if (singleCenter.fee == "undefined"){
+                //   singleCenter.fee = "0"
+                // }
 
                 const result = `
       <h4>Center Details</h4>
@@ -203,7 +222,7 @@ $(document).ready(function () {
       <p>${"Dose2 : " + singleSession.available_capacity_dose2}</p>
       <p>${"Date : " + singleSession.date}</p>
       <p>${"Fee Type : " + singleCenter.fee_type}</p>
-      <p>${"Fee : " + singleSession.fee}</p>
+      <p>${"Fee : " + singleCenter.fee}</p>
       <p>${"Age Limit : " + singleSession.min_age_limit}</p>
       <p>${"From : " + singleCenter.from}</p>
       <p>${"To : " + singleCenter.to}</p>

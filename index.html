@@ -80,6 +80,7 @@
     <h1>Covid-19 Status</h1>
     <select name="country" id="select">
       <option value="0">Select Country</option>
+      <option value="global">Global</option>
     </select>
     <div class="data-box">
       <div class="data-group">
@@ -278,7 +279,7 @@
                 <option id="dis" value="">Select District</option>
               </select>
               <label for="date">Date to Know:</label>
-              <input type="date" name="date" id="date" placeholder="dd-mm-yyyy">
+              <input type="text" onfocus="(this.type='date')" name="date" id="date" placeholder="DD-MM-YYYY">
               <label for="district">Center:</label>
               <select name="Centers" id="center">
                 <option value="">Select Center</option>
