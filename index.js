@@ -35,18 +35,18 @@ $(document).ready(function () {
   function init() {
     var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort";
     $.get(url, function (data) {
-      // console.log(data);
+       console.log(data);
 
       const selectCountry = document.querySelector("select#select");
 
       for (eachCountry in data) {
         const singleCountry = data[eachCountry];
-        // console.log(singleCountry);
+        //console.log(singleCountry);
         makeNewOptionBox(singleCountry);
 
         selectCountry.addEventListener("change", function (e) {
           if (e.target.value == singleCountry.country) {
-            console.log(singleCountry);
+            // console.log(singleCountry);
             callCountry(singleCountry);
           }
         });
@@ -77,8 +77,9 @@ $(document).ready(function () {
 
 // API Covid 19  vaccine Availablity
 
-var date = new Date(); 
-var today = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+var date = new Date();
+var today =
+  date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
 $(document).ready(function () {
   init2();
@@ -92,7 +93,7 @@ $(document).ready(function () {
 
       for (eachState in data.states) {
         const singleState = data.states[eachState];
-        // console.log(singleState);
+        //console.log(singleState);
         makeNewOptionBoxStates(singleState);
 
         selectState.addEventListener("change", function (e) {
@@ -134,7 +135,6 @@ $(document).ready(function () {
             if (e.target.value == singleDistrict.district_name) {
               //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
-              $("#center").empty();
             }
           });
         }
@@ -152,49 +152,68 @@ $(document).ready(function () {
       }
 
       function callDistrictId(districtData) {
-        var url =
-          "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=" +
-          districtData +
-          "&date=" +
-          today;
-        $.get(url, function (data) {
-          //console.log(data);
-          manupulateData1(data);
-        });
+        document
+          .querySelector("input#date")
+          .addEventListener("change", function (e) {
+            $("#center").empty();
+            // console.log(e.target.value.split("-"));
+            const dateFor = e.target.value.split("-");
+
+            var url =
+              "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" +
+              districtData +
+              "&date=" +
+              dateFor[2] +
+              -+dateFor[1] +
+              -+dateFor[0];
+            $.get(url, function (data) {
+              //console.log(data);
+              manupulateData1(data);
+            });
+          });
       }
 
       const selectCenter = document.querySelector("select#center");
-
+      const selectDate = document.querySelector("input#date");
       function manupulateData1(data) {
-        for (eachCenter in data.sessions) {
-          const singleCenter = data.sessions[eachCenter];
+        for (eachCenter in data.centers) {
+          const singleCenter = data.centers[eachCenter];
           //console.log(singleCenter);
           makeNewOptionBoxCenter(singleCenter);
 
-          selectCenter.addEventListener("change", function (e) {
-            if (e.target.value == singleCenter.name) {
-              //console.log(singleCenter.address);
-              // callCenterId(singleCenter);
+          for (eachSessions in singleCenter.sessions) {
+            const singleSession = singleCenter.sessions[eachSessions];
+            //console.log(singleSession);
 
-              const result = `
+            selectCenter.addEventListener("change", function (e) {
+              if (e.target.value == singleCenter.name) {
+                //console.log(singleCenter);
+                // callCenterId(singleCenter);
+
+                selectDate.addEventListener("change", function (e) {
+                  singleCenter.sessions.length = 0;
+                });
+
+                const result = `
       <h4>Center Details</h4>
       <p>${"Address : " + singleCenter.address}</p>
       <p>${"Block Name : " + singleCenter.block_name}</p>
       <p>${"Center Id : " + singleCenter.center_id}</p>
-      <p>${"Dose1 : " + singleCenter.available_capacity_dose1}</p>
-      <p>${"Dose2 : " + singleCenter.available_capacity_dose2}</p>
-      <p>${"Date : " + singleCenter.date}</p>
+      <p>${"Dose1 : " + singleSession.available_capacity_dose1}</p>
+      <p>${"Dose2 : " + singleSession.available_capacity_dose2}</p>
+      <p>${"Date : " + singleSession.date}</p>
       <p>${"Fee Type : " + singleCenter.fee_type}</p>
-      <p>${"Fee : " + singleCenter.fee}</p>
-      <p>${"Age Limit : " + singleCenter.min_age_limit}</p>
+      <p>${"Fee : " + singleSession.fee}</p>
+      <p>${"Age Limit : " + singleSession.min_age_limit}</p>
       <p>${"From : " + singleCenter.from}</p>
       <p>${"To : " + singleCenter.to}</p>
-      <p>${"Slots : " + singleCenter.slots}</p>
-      <p>${"Vaccine : " + singleCenter.vaccine}</p>
+      <p>${"Slots : " + singleSession.slots}</p>
+      <p>${"Vaccine : " + singleSession.vaccine}</p>
       `;
-              $("div#result").html(result);
-            }
-          });
+                $("div#result").html(result);
+              }
+            });
+          }
         }
       }
       function makeNewOptionBoxCenter(data) {

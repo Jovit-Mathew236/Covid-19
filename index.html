@@ -82,19 +82,19 @@
       <option value="0">Select Country</option>
     </select>
     <div class="data-box">
-      <div>
+      <div class="data-group">
         <h2>Total Death</h2>
         <p id="totalDeaths">0</p>
       </div>
-      <div>
+      <div class="data-group">
         <h2>Total Recoverd</h2>
         <p id="totalRecoverd">0</p>
       </div>
-      <div>
+      <div class="data-group">
         <h2>Total Confirmed</h2>
         <p id="totalConfirmed">0</p>
       </div>
-      <div>
+      <div class="data-group">
         <h2>New Cases</h2>
         <p id="newCases">0</p>
       </div>
@@ -275,14 +275,14 @@
               </select>
               <label for="district">District:</label>
               <select name="Districts" id="district">
-                <option value="">Select District</option>
+                <option id="dis" value="">Select District</option>
               </select>
+              <label for="date">Date to Know:</label>
+              <input type="date" name="date" id="date" placeholder="dd-mm-yyyy">
               <label for="district">Center:</label>
               <select name="Centers" id="center">
                 <option value="">Select Center</option>
               </select>
-              <label for="date">Date to Know:</label>
-              <input type="date" name="Date" id="date">
             </div>
           </form>
         </div>
@@ -401,7 +401,6 @@
   </div>
 
   <!-- Final Section End -->
-
 </body>
 
 </html>

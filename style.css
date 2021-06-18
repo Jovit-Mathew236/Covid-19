@@ -63,10 +63,10 @@ html {
 .menu ul a:hover {
   -webkit-text-stroke: thick;
 }
-.menu input{
+.menu input {
   display: none;
 }
-.menu label{
+.menu label {
   z-index: 2;
 }
 .menu label i {
@@ -104,7 +104,7 @@ html {
     backdrop-filter: brightness(0.2);
     height: auto;
   }
-  #cheking:checked ~ label i::before{
+  #cheking:checked ~ label i::before {
     content: "\f00d";
   }
 }
@@ -156,7 +156,7 @@ html {
   align-items: center;
   justify-content: center;
   border-bottom-right-radius: 100px;
-  background-color: black;
+  background-image: linear-gradient(45deg, #ff00dd, #e48100);
 }
 
 .section2 img {
@@ -164,6 +164,7 @@ html {
   height: 100vh;
   background-size: cover;
   object-fit: cover;
+  box-shadow: 8px 0px 10px 0px #c5a68a;
 }
 .sec2_content {
   justify-content: center;
@@ -287,6 +288,10 @@ html {
   flex-wrap: wrap;
   margin: 1rem;
 }
+.data-group {
+  margin: auto;
+  width: 184px;
+}
 .data-box p {
   height: 150px;
   border: 1px solid white;
@@ -297,7 +302,7 @@ html {
   justify-content: center;
   align-items: center;
   padding: 3rem;
-  margin: 1rem;
+  margin: auto;
   color: white;
 }
 .data-box p#totalDeaths {
@@ -332,7 +337,7 @@ html {
   box-shadow: 1px 2px 14px 0px #2f2f2fe6;
   overflow: hidden;
   margin: 2vh auto;
-  height: 665px;
+  height: calc(35rem + 9vw);
 }
 .img-container {
   width: 100%;
@@ -380,7 +385,7 @@ p {
 /*Final section */
 
 #fin_sec {
-  height: 100vh;
+  height: auto;
   width: 100vw;
 }
 .fin_img {
@@ -399,9 +404,10 @@ p {
   justify-content: center;
   height: 50%;
   margin: 2rem auto;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.219);
-  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  background-image: linear-gradient(45deg, #df630c, #ee00ff);
+  /* backdrop-filter: blur(15px); */
+  box-shadow: inset 0px 0px 20px 8px #000000b8;
 }
 #form {
   display: flex;
@@ -426,12 +432,14 @@ p {
   text-shadow: 0px 1px 0px rgb(255, 255, 255);
   padding: 5px 0px;
 }
-#form select ,#form input{
+#form select,
+#form input {
   border-radius: 20px;
   width: fit-content;
   margin: auto;
   min-width: 100%;
   cursor: pointer;
+  box-shadow: 0px 0px 12px 2px #0000008a;
 }
 .result {
   display: flex;
@@ -439,7 +447,7 @@ p {
   height: 50%;
   margin: 2rem auto;
   border-radius: 2rem;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(243 243 245 / 55%);
   backdrop-filter: blur(5px);
 }
 .result h4 {
@@ -451,6 +459,9 @@ p {
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem;
+  color: white;
+  border-radius: 34px;
+  background-image: linear-gradient(45deg, #ff00ec, #ffcb13);
 }
 .about {
   margin-top: 0vh;
@@ -489,7 +500,10 @@ span {
   font-size: small;
   text-align: center;
 }
-.help-line a ,.help-line a p ,.links a ,.social-media a {
+.help-line a,
+.help-line a p,
+.links a,
+.social-media a {
   color: white;
   text-decoration: none;
   margin: 0%;
@@ -581,7 +595,10 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.help-line, .links, .social-media, .email{
+.help-line,
+.links,
+.social-media,
+.email {
   margin-top: 2rem;
 }
 @media only screen and (max-width: 1100px) {
