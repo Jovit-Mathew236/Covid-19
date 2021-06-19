@@ -35,7 +35,7 @@ $(document).ready(function () {
   function init() {
     var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort";
     $.get(url, function (data) {
-      //console.log(data);
+      console.log(data);
 
       var url = "https://api.covid19api.com/summary";
       $.get(url, function (dataGlobal) {
@@ -56,15 +56,24 @@ $(document).ready(function () {
               totalRecoverd = singleCountry.recovered;
               totalConfirmed = singleCountry.cases;
               newCases = singleCountry.todayCases;
-              if (newCases == "0"){
+              dateUpdated = singleCountry.updated;
+              if (newCases == "0") {
                 $("#newCases").html("Zero");
-              }else{
+              } else {
                 $("#newCases").html(newCases);
               }
               $("#totalDeaths").html(totalDeaths);
               $("#totalRecoverd").html(totalRecoverd);
               $("#totalConfirmed").html(totalConfirmed);
-            } if (e.target.value == "global") {
+              // Showing date that api modified
+              let newDate = new Date(dateUpdated);
+              var dateString = `${newDate.toDateString()} ${newDate.toTimeString()}`;
+
+              dateString = dateString.split(" ").slice(0, 5).join(" ");
+              // console.log(dateString);
+              $("#dateMod").html("Last Updated on : "+dateString)
+            }
+            if (e.target.value == "global") {
               totalDeaths = dataGlobal.Global.TotalDeaths;
               totalRecoverd = dataGlobal.Global.TotalRecovered;
               totalConfirmed = dataGlobal.Global.TotalConfirmed;

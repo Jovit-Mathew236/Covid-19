@@ -263,7 +263,7 @@ html {
   background-image: linear-gradient(45deg, #ff6c00, #ef00ff8f);
   border-radius: 30px;
   margin: 2rem auto;
-  padding: 4rem;
+  padding: 4rem 4rem 0rem 4rem;
   color: white;
   display: flex;
   flex-direction: column;
@@ -323,6 +323,9 @@ html {
 }
 .data-box p#newCases {
   background-image: linear-gradient(235deg, #04f5ffbd 0%, #1100ff96 114%);
+}
+#dateMod{
+  font-size: smaller;
 }
 
 /*Section 3*/
