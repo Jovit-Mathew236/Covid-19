@@ -325,7 +325,7 @@ html {
   background-image: linear-gradient(235deg, #04f5ffbd 0%, #1100ff96 114%);
 }
 #dateMod{
-  font-size: smaller;
+  font-size: medium;
 }
 
 /*Section 3*/
@@ -414,10 +414,11 @@ p {
   justify-content: center;
   height: 50%;
   margin: 2rem auto;
-  border-radius: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
   background-image: linear-gradient(45deg, #df630c, #ee00ff);
   /* backdrop-filter: blur(15px); */
-  box-shadow: inset 0px 0px 20px 8px #000000b8;
+  box-shadow: 0px 0px 20px 8px #00000054;
 }
 #form {
   display: flex;

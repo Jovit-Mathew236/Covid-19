@@ -35,11 +35,16 @@ $(document).ready(function () {
   function init() {
     var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort";
     $.get(url, function (data) {
-      console.log(data);
+      // console.log(data);
 
       var url = "https://api.covid19api.com/summary";
       $.get(url, function (dataGlobal) {
         //console.log(dataGlobal);
+
+        // var url = "https://api.covid19api.com/summary";
+        // $.get(url,function (stateStatus){
+        //   console.log(stateStatus);
+        // })
 
         const selectCountry = document.querySelector("select#select");
 
@@ -71,7 +76,7 @@ $(document).ready(function () {
 
               dateString = dateString.split(" ").slice(0, 5).join(" ");
               // console.log(dateString);
-              $("#dateMod").html("Last Updated on : "+dateString)
+              $("#dateMod").html("Last Updated on : " + dateString);
             }
             if (e.target.value == "global") {
               totalDeaths = dataGlobal.Global.TotalDeaths;
@@ -100,6 +105,7 @@ $(document).ready(function () {
 });
 
 // API Covid 19  vaccine Availablity
+// NB: Sometimes I feel this API is note correct, so you can check it by console.log() all data
 
 var date = new Date();
 var today =
@@ -113,8 +119,8 @@ $(document).ready(function () {
     $.get(url, function (data) {
       //console.log(data);
 
+      // Making states Option
       const selectState = document.querySelector("select#state");
-
       for (eachState in data.states) {
         const singleState = data.states[eachState];
         //console.log(singleState);
@@ -138,6 +144,7 @@ $(document).ready(function () {
         }
       }
 
+      // Making district option
       function callStateId(data) {
         var url =
           "https://cdn-api.co-vin.in/api/v2/admin/location/districts/" + data;
@@ -160,6 +167,7 @@ $(document).ready(function () {
               //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
               $("#center").empty();
+              $("input#date").empty();
             }
           });
         }
@@ -176,30 +184,31 @@ $(document).ready(function () {
         }
       }
 
-      function callDistrictId(districtData) {
+      // Making Center option
+      function callDistrictId(districtId) {
         document
           .querySelector("input#date")
           .addEventListener("change", function (e) {
-            $("#center").empty();
             // console.log(e.target.value.split("-"));
             const dateFor = e.target.value.split("-");
-
-            var url =
-              "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" +
-              districtData +
-              "&date=" +
-              dateFor[2] +
-              -+dateFor[1] +
-              -+dateFor[0];
-            $.get(url, function (data) {
-              //console.log(data);
-              manupulateData1(data);
-            });
+            $("#center").empty();
           });
+        var url =
+          "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" +
+          districtId +
+          "&date=" +
+          dateFor[2] +
+          -+dateFor[1] +
+          -+dateFor[0];
+        $.get(url, function (data) {
+          console.log(data, url);
+          manupulateData1(data);
+        });
       }
 
       const selectCenter = document.querySelector("select#center");
       const selectDate = document.querySelector("input#date");
+
       function manupulateData1(data) {
         for (eachCenter in data.centers) {
           const singleCenter = data.centers[eachCenter];
@@ -218,9 +227,9 @@ $(document).ready(function () {
                 selectDate.addEventListener("change", function (e) {
                   singleCenter.sessions.length = 0;
                 });
-                // if (singleCenter.fee == "undefined"){
-                //   singleCenter.fee = "0"
-                // }
+                if (singleCenter.fee == undefined) {
+                  singleCenter.fee = "0";
+                }
 
                 const result = `
       <h4>Center Details</h4>
@@ -244,6 +253,7 @@ $(document).ready(function () {
           }
         }
       }
+
       function makeNewOptionBoxCenter(data) {
         //console.log(data);
         const centerName = data.name;
