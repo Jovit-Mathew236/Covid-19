@@ -125,8 +125,8 @@ $(document).ready(function () {
           if (e.target.value == singleState.state_name) {
             callStateId(singleState.state_id);
             $("#district").empty(); // Refreshing District select option for depentent select option easy method:)
-            const selDis = ` <option>Select District</option>`;
-            $("#district").html(selDis);
+            const reloadDistrict = ` <option>Select District</option>`; // appling new option
+            $("#district").html(reloadDistrict);
           }
         });
       }
@@ -160,8 +160,8 @@ $(document).ready(function () {
             if (e.target.value == singleDistrict.district_name) {
               callDistrictId(singleDistrict.district_id);
               $("#center").empty();// Refreshing District select option for depentent select option easy method:)
-              const selCent = ` <option>Select Center</option>`;
-              $("#center").html(selCent);
+              const reloadCenter = ` <option>Select Center</option>`; // appling new option 
+              $("#center").html(reloadCenter);
             }
           });
         }
@@ -194,7 +194,6 @@ $(document).ready(function () {
               -+dateFor[1] +
               -+dateFor[0];
             $.get(url, function (data) {
-              console.log(url);
               manupulateData1(data);
             });
           });
@@ -212,15 +211,9 @@ $(document).ready(function () {
             const singleSession = singleCenter.sessions[eachSessions];
             selectCenter.addEventListener("change", function (e) {
               if (e.target.value == singleCenter.name) {
-
                 selectDate.addEventListener("change", function (e) {
                   singleCenter.sessions.length = 0;
                 });
-                if (singleCenter.fee == undefined) {
-                  singleCenter.fee = "0";
-                }if (singleCenter.fee == paid){
-                  singleCenter.fee = "-";
-                }
 
                 const result = `
       <h4>Center Details</h4>
@@ -231,7 +224,6 @@ $(document).ready(function () {
       <p>${"Dose2 : " + singleSession.available_capacity_dose2}</p>
       <p>${"Date : " + singleSession.date}</p>
       <p>${"Fee Type : " + singleCenter.fee_type}</p>
-      <p>${"Fee : " + singleCenter.fee}</p>
       <p>${"Age Limit : " + singleSession.min_age_limit}</p>
       <p>${"From : " + singleCenter.from}</p>
       <p>${"To : " + singleCenter.to}</p>
