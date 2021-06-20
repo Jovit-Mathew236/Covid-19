@@ -1,5 +1,4 @@
 // Read more option js
-
 const myFunction = () => {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
@@ -16,6 +15,7 @@ const myFunction = () => {
   }
 };
 
+// Nav bar show and hide
 function showMenu() {
   var menu = document.getElementById("navMenu");
   if (menu.style.display === "flex") {
@@ -33,13 +33,11 @@ $(document).ready(function () {
   init();
 
   function init() {
-    var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort";
+    var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort"; //API country wise covid status
     $.get(url, function (data) {
-      // console.log(data);
 
-      var url = "https://api.covid19api.com/summary";
+      var url = "https://api.covid19api.com/summary"; // API global covid status
       $.get(url, function (dataGlobal) {
-        //console.log(dataGlobal);
 
         // var url = "https://api.covid19api.com/summary";
         // $.get(url,function (stateStatus){
@@ -50,13 +48,11 @@ $(document).ready(function () {
 
         for (eachCountry in data) {
           const singleCountry = data[eachCountry];
-          //console.log(singleCountry);
-          makeNewOptionBox(singleCountry);
+          makeNewOptionBox(singleCountry); //for making new options
 
           selectCountry.addEventListener("change", function (e) {
-            //console.log(e.target.value);
             if (e.target.value == singleCountry.country) {
-              // console.log(singleCountry);
+              // I making variables to easy use
               totalDeaths = singleCountry.deaths;
               totalRecoverd = singleCountry.recovered;
               totalConfirmed = singleCountry.cases;
@@ -70,7 +66,7 @@ $(document).ready(function () {
               $("#totalDeaths").html(totalDeaths);
               $("#totalRecoverd").html(totalRecoverd);
               $("#totalConfirmed").html(totalConfirmed);
-              // Showing date that api modified
+              // Showing date that api Updated
               let newDate = new Date(dateUpdated);
               var dateString = `${newDate.toDateString()} ${newDate.toTimeString()}`;
 
@@ -78,6 +74,7 @@ $(document).ready(function () {
               // console.log(dateString);
               $("#dateMod").html("Last Updated on : " + dateString);
             }
+            // If user select global status 
             if (e.target.value == "global") {
               totalDeaths = dataGlobal.Global.TotalDeaths;
               totalRecoverd = dataGlobal.Global.TotalRecovered;
@@ -105,38 +102,35 @@ $(document).ready(function () {
 });
 
 // API Covid 19  vaccine Availablity
-// NB: Sometimes I feel this API is note correct, so you can check it by console.log() all data
+// NB: Sometimes I felt this API is note correct, so you can check it by console.log() all data
 
 var date = new Date();
 var today =
-  date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+  date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(); // today's date
 
 $(document).ready(function () {
   init2();
 
   function init2() {
-    var url = "https://cdn-api.co-vin.in/api/v2/admin/location/states";
+    var url = "https://cdn-api.co-vin.in/api/v2/admin/location/states";//API covid vaccine availablity state names
     $.get(url, function (data) {
-      //console.log(data);
 
-      // Making states Option
+      // Arrange states
       const selectState = document.querySelector("select#state");
       for (eachState in data.states) {
         const singleState = data.states[eachState];
-        //console.log(singleState);
         makeNewOptionBoxStates(singleState);
 
         selectState.addEventListener("change", function (e) {
           if (e.target.value == singleState.state_name) {
-            //console.log(singleState.state_id);
             callStateId(singleState.state_id);
-            $("#district").empty();
+            $("#district").empty(); // Refreshing District select option for depentent select option easy method:)
             const selDis = ` <option>Select District</option>`;
             $("#district").html(selDis);
           }
         });
       }
-
+      // making new options sof ststes
       function makeNewOptionBoxStates(data) {
         const stateName = data.state_name;
         if (typeof stateName != "undefined") {
@@ -146,12 +140,11 @@ $(document).ready(function () {
         }
       }
 
-      // Making district option
+      // Making district options
       function callStateId(data) {
         var url =
           "https://cdn-api.co-vin.in/api/v2/admin/location/districts/" + data;
         $.get(url, function (data) {
-          //console.log(data);
           manupulateData(data);
         });
       }
@@ -161,23 +154,20 @@ $(document).ready(function () {
       function manupulateData(data) {
         for (eachDistrict in data.districts) {
           const singleDistrict = data.districts[eachDistrict];
-          //console.log(singleDistrict);
           makeNewOptionBoxDistrict(singleDistrict);
 
           selectDistrict.addEventListener("change", function (e) {
             if (e.target.value == singleDistrict.district_name) {
-              //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
-              $("#center").empty();
+              $("#center").empty();// Refreshing District select option for depentent select option easy method:)
               const selCent = ` <option>Select Center</option>`;
               $("#center").html(selCent);
             }
           });
         }
       }
-
+      // making new options of districts
       function makeNewOptionBoxDistrict(data) {
-        //console.log(data);
         const districtName = data.district_name;
         if (typeof districtName != "undefined") {
           const optionBoxDistrict = document.createElement("option");
@@ -187,12 +177,11 @@ $(document).ready(function () {
         }
       }
 
-      // Making Center option
+      // Making Center Details
       function callDistrictId(districtId) {
         document
           .querySelector("input#date")
           .addEventListener("change", function (e) {
-            // console.log(e.target.value.split("-"));
             const dateFor = e.target.value.split("-");
             $("#center").empty();
             const selCent = ` <option>Select Center</option>`;
@@ -217,17 +206,12 @@ $(document).ready(function () {
       function manupulateData1(data) {
         for (eachCenter in data.centers) {
           const singleCenter = data.centers[eachCenter];
-          //console.log(singleCenter);
           makeNewOptionBoxCenter(singleCenter);
 
           for (eachSessions in singleCenter.sessions) {
             const singleSession = singleCenter.sessions[eachSessions];
-            //console.log(singleSession);
-
             selectCenter.addEventListener("change", function (e) {
               if (e.target.value == singleCenter.name) {
-                //console.log(singleCenter);
-                // callCenterId(singleCenter);
 
                 selectDate.addEventListener("change", function (e) {
                   singleCenter.sessions.length = 0;
@@ -262,7 +246,6 @@ $(document).ready(function () {
       }
 
       function makeNewOptionBoxCenter(data) {
-        //console.log(data);
         const centerName = data.name;
         if (typeof centerName != "undefined") {
           const optionBoxCenter = document.createElement("option");
