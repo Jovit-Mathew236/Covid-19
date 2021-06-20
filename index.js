@@ -100,8 +100,7 @@ $(document).ready(function () {
 // NB: Sometimes I felt this API is note correct, so you can check it by console.log() all data
 
 var date = new Date();
-var today =
-  date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(); // today's date
+var today = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(); // today's date
 
 $(document).ready(function () {
   init2();
@@ -181,13 +180,7 @@ $(document).ready(function () {
             $("#center").empty();
             const selCent = ` <option>Select Center</option>`;
             $("#center").html(selCent);
-            var url =
-              "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" +
-              districtId +
-              "&date=" +
-              dateFor[2] +
-              -+dateFor[1] +
-              -+dateFor[0];
+            var url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" + districtId + "&date=" + dateFor[2] + - +dateFor[1] + - +dateFor[0];
             $.get(url, function (data) {
               manupulateData1(data);
             });
