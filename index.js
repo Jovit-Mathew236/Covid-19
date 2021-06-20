@@ -39,11 +39,6 @@ $(document).ready(function () {
       var url = "https://api.covid19api.com/summary"; // API global covid status
       $.get(url, function (dataGlobal) {
 
-        // var url = "https://api.covid19api.com/summary";
-        // $.get(url,function (stateStatus){
-        //   console.log(stateStatus);
-        // })
-
         const selectCountry = document.querySelector("select#select");
 
         for (eachCountry in data) {

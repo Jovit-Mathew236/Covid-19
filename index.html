@@ -30,7 +30,7 @@
         <label for="cheking">
           <i onclick="showMenu()" class="fas fa-bars"></i>
         </label>
-        
+
         <ul id="navMenu">
           <a href="#section2">COVID-19</a>
           <a href="#section3">MYTH & FACT</a>
@@ -278,7 +278,7 @@
               </select>
               <label for="district">District:</label>
               <select name="Districts" id="district">
-                <option id="dis" value="">Select District</option>
+                <option value="">Select District</option>
               </select>
               <label for="date">Date to Know:</label>
               <input type="text" onfocus="(this.type='date')" name="date" id="date" placeholder="DD-MM-YYYY">
@@ -334,13 +334,10 @@
 
           <div class="social-media">
             <h4>Social Media</h4>
-            <a href="https://www.instagram.com/covid19helplineindia/?hl=en"><i class=" insta fab fa-instagram"></i>
-              Instagram</a>
+            <a href="https://www.instagram.com/covid19helplineindia/?hl=en"><i class=" insta fab fa-instagram"></i>Instagram</a>
             <a href=""><i class="face fab fa-facebook"></i> Facebook</a>
             <a href="https://wa.me/918281312912"><i class="whtapp fab fa-whatsapp"></i> whatsapp</a>
-            <a
-              href="https://mail.google.com/a/google.com/?view=cm&fs=1&to=covid19warroomkerala@gmail.com#inbox"><i
-                class="email fas fa-envelope"></i> Email</a>
+            <a href="https://mail.google.com/a/google.com/?view=cm&fs=1&to=covid19warroomkerala@gmail.com#inbox"><iclass="email fas fa-envelope"></i> Email</a>
           </div>
 
           <div class="email">
@@ -353,7 +350,7 @@
                     <label for="fname">Name</label>
                   </div>
                   <div class="form-group">
-                    <input type="number" name="PhoneNo" required>
+                    <input id="number" type="number" name="PhoneNo" required>
                     <label for="phno">Phone No</label>
                   </div>
                   <div class="form-group">
@@ -377,18 +374,23 @@
           <script>
             $("#submit-form").submit((e) => {
               e.preventDefault()
-              $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbwUd6eQCT1jWF6xsgYAeuRFb7p2qN-Hw5LUQrrEtS7DBdVvcRW0h6dsxDQHSyV51cPYMA/exec",
-                data: $("#submit-form").serialize(),
-                method: "post",
-                success: function (response) {
-                  alert("Form submitted successfully")
-                  window.location.reload()
-                },
-                error: function (err) {
-                  alert("Something Error")
-                }
-              })
+              var no = document.getElementById("number").value;
+              if (no.length != '10') {
+                alert("please Enter valued Number")
+              } else {
+                $.ajax({
+                  url: "https://script.google.com/macros/s/AKfycbwUd6eQCT1jWF6xsgYAeuRFb7p2qN-Hw5LUQrrEtS7DBdVvcRW0h6dsxDQHSyV51cPYMA/exec",
+                  data: $("#submit-form").serialize(),
+                  method: "post",
+                  success: function (response) {
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                  },
+                  error: function (err) {
+                    alert("Something Error")
+                  }
+                })
+              }
             })
           </script>
 
