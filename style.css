@@ -177,7 +177,7 @@ html {
   border-radius: 20px;
   width: fit-content;
   border: 2px solid #ffc800b5;
-  box-shadow: 0px 0px 17px 4px #004eff;
+  box-shadow: inset 0px 0px 17px 4px #0422b4b7;
 }
 .section2 h1 {
   padding-top: 3vh;
@@ -455,6 +455,7 @@ p {
   margin: auto;
   min-width: 100%;
   cursor: pointer;
+  color: black;
   background-color: white;
   box-shadow: 0px 0px 12px 2px #0000008a;
 }
@@ -488,6 +489,7 @@ p {
   color: #fff;
   flex-grow: 20;
   backdrop-filter: brightness(0.1);
+  background-color: rgba(0, 0, 0, 0.897);
 }
 .about-logo {
   display: flex;
@@ -570,9 +572,7 @@ span {
 }
 .email .form2 .form-group {
   display: flex;
-  /* width: 249px; */
   flex-direction: column;
-  /* margin: 25px auto; */
   position: relative;
 }
 .form2 .form-group input {
@@ -581,6 +581,7 @@ span {
   margin-top: 5px;
   outline: none;
   border-bottom: 1px solid #c9c9c98a;
+  background-color: white;
 }
 .form2 .form-group label {
   color: rgb(165, 165, 165);
