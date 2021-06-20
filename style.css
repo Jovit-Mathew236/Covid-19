@@ -297,7 +297,6 @@ html {
 }
 .data-group {
   margin: auto;
-  width: 245px;
 }
 .data-box p {
   height: 150px;
@@ -326,6 +325,11 @@ html {
 }
 #dateMod{
   font-size: medium;
+}
+@media only screen and (max-width: 900px) {
+  .data-group {
+    width: 245px;
+  }
 }
 
 /*Section 3*/
@@ -366,7 +370,7 @@ p {
 .card-container h4 {
   margin-top: 10px;
 }
-@media only screen and (max-width: 1165px) {
+@media only screen and (max-width: 1000px) {
   .card-container {
     width: 100vw;
     border-radius: 5px;

@@ -131,6 +131,8 @@ $(document).ready(function () {
             //console.log(singleState.state_id);
             callStateId(singleState.state_id);
             $("#district").empty();
+            const selDis = ` <option>Select District</option>`;
+            $("#district").html(selDis);
           }
         });
       }
@@ -167,7 +169,8 @@ $(document).ready(function () {
               //console.log(singleDistrict.district_name);
               callDistrictId(singleDistrict.district_id);
               $("#center").empty();
-              $("input#date").empty();
+              const selCent = ` <option>Select Center</option>`;
+              $("#center").html(selCent);
             }
           });
         }
@@ -192,18 +195,20 @@ $(document).ready(function () {
             // console.log(e.target.value.split("-"));
             const dateFor = e.target.value.split("-");
             $("#center").empty();
+            const selCent = ` <option>Select Center</option>`;
+            $("#center").html(selCent);
+            var url =
+              "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" +
+              districtId +
+              "&date=" +
+              dateFor[2] +
+              -+dateFor[1] +
+              -+dateFor[0];
+            $.get(url, function (data) {
+              console.log(url);
+              manupulateData1(data);
+            });
           });
-        var url =
-          "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=" +
-          districtId +
-          "&date=" +
-          dateFor[2] +
-          -+dateFor[1] +
-          -+dateFor[0];
-        $.get(url, function (data) {
-          console.log(data, url);
-          manupulateData1(data);
-        });
       }
 
       const selectCenter = document.querySelector("select#center");
@@ -229,6 +234,8 @@ $(document).ready(function () {
                 });
                 if (singleCenter.fee == undefined) {
                   singleCenter.fee = "0";
+                }if (singleCenter.fee == paid){
+                  singleCenter.fee = "-";
                 }
 
                 const result = `
