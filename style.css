@@ -332,7 +332,7 @@ html {
 .card-container {
   width: 48vw;
   border-radius: 5px;
-  box-shadow: 1px 2px 14px 0 #2f2f2fe6;
+  box-shadow: 1px 2px 20px 0 #adadad57;;
   overflow: hidden;
   margin: 2vh auto;
   height: calc(35rem + 9vw);
@@ -358,7 +358,7 @@ p {
   .card-container {
     width: 100vw;
     border-radius: 5px;
-    box-shadow: 1px 2px 20px 1px #2f2f2fe6;
+    box-shadow: 1px 2px 20px 0 #adadad57;;
     margin: 2vh;
     height: auto;
   }
