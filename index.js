@@ -26,14 +26,22 @@ function showMenu() {
 }
 
 // API Calling >>
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
 
+fetch("https://api.covid19api.com/countries", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 // Covid 19 status Country wise
 
 $(document).ready(function () {
   init();
 
   function init() {
-    var url = "https://corona.lmao.ninja/v2/countries?yesterday&sort"; //API country wise covid status
+    var url = "https://api.covid19api.com/countries"; //API country wise covid status
     $.get(url, function (data) {
 
       var url = "https://api.covid19api.com/summary"; // API global covid status
